@@ -35,7 +35,7 @@ class TonnerCommands extends DrushCommands {
      */
     public function importNews() {
         //https://newsapi.org/sources
-        echo '*************************News Import Process Has Started.*************************'.PHP_EOL;
+        echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has started.*************************'.PHP_EOL;
         //Import News Headlines for each Country
         $this->import('us','United States');
         $this->import('gb','United Kingdom');
@@ -46,7 +46,7 @@ class TonnerCommands extends DrushCommands {
         $this->import('nz','New Zealand');
         $this->import('za','South Africa');
 
-        echo '*************************News Import Process Has Started ended.*************************'.PHP_EOL;
+        echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has Ended.*************************'.PHP_EOL;
         // the message
         $msg = "Sentiment Tool Import News has finished running ".date('m-d-Y h:i:s',time());
         // use wordwrap() if lines are longer than 70 characters
@@ -64,6 +64,7 @@ class TonnerCommands extends DrushCommands {
     public function import($counrty_code,$country_title) {
         //talk
         $this->logger()->success(dt('News Import Process Has started.'));
+        echo(dt('News Import Process Has started.'));
         //--------------------------------------------------------------------------------------------------------------
             # An HTTP GET request example
             //Api headlines endpoint
@@ -83,12 +84,14 @@ class TonnerCommands extends DrushCommands {
             if($newsArr->status==="ok"){
                 //Talk
                 $this->logger()->success(dt('News API Says GO!'));
+                echo(dt('News API Says GO!'));
                 //get the total results
                 $total = $newsArr->totalResults;
                 //Test that we have a res
                 if($total>0){
                     //talk
                     $this->logger()->success(dt('Found News Articles: total: '.$total));
+                    echo(dt('Found News Articles: total: '.$total));
                     //Loop through the articles
                     foreach ($newsArr->articles as $article){
                         //Test for duplicates
@@ -184,6 +187,7 @@ class TonnerCommands extends DrushCommands {
         //--------------------------------------------------------------------------------------------------------------
         //Talk
         $this->logger()->success(dt('News Import Process Has ended.'));
+        echo(dt('News Import Process Has ended.'));
     }
 
     /**
