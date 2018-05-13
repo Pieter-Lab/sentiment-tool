@@ -103,11 +103,13 @@ class TonnerCommands extends DrushCommands {
                         if(empty($nids)){
                             echo ''.PHP_EOL;
                             $this->logger()->success(dt('Processing Article: '.$article->title));
+                            echo(dt('Processing Article: '.$article->title));
                             //Get the tones
                             $tones = $this->interpret($article->title,$article->description);
                             //----------------------------------------------------------------------------------------------------------
                             if(!empty($tones->document_tone->tones)){
                                 $this->logger()->success(dt('Generating Article: '.$article->title));
+                                echo(dt('Generating Article: '.$article->title));
                                 //Insert
                                 $edge_name = Node::create(['type' => 'news_headline']);
                                 $edge_name->set('title', $article->title);
@@ -168,21 +170,25 @@ class TonnerCommands extends DrushCommands {
                                 $edge_name->save();
                                 //talk
                                 $this->logger()->success(dt('********* New Article Inserted *********'));
+                                echo(dt('********* New Article Inserted *********'));
                             }else{
                                 //Talk
                                 $this->logger()->error(dt('No Tones Found for Article: '.$article->title));
+                                echo(dt('No Tones Found for Article: '.$article->title));
                             }
                             //----------------------------------------------------------------------------------------------------------
                         }else{
                             //Talk
-                            echo ''.PHP_EOL;
+                            echo '.'.PHP_EOL;
                             $this->logger()->error(dt('Article Present: '.$article->title));
+                            echo(dt('Article Present: '.$article->title));
                         }
                     }
                 }
             }else{
                 //Talk
                 $this->logger()->error(dt('News API Says NO!'));
+                echo(dt('News API Says NO!'));
             }
         //--------------------------------------------------------------------------------------------------------------
         //Talk
