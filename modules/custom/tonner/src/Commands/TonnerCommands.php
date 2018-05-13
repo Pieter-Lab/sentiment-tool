@@ -64,7 +64,7 @@ class TonnerCommands extends DrushCommands {
     public function import($counrty_code,$country_title) {
         //talk
         $this->logger()->success(dt('News Import Process Has started.'));
-        echo(dt('News Import Process Has started.'));
+        echo(dt('News Import Process Has started.')).PHP_EOL;
         //--------------------------------------------------------------------------------------------------------------
             # An HTTP GET request example
             //Api headlines endpoint
@@ -84,14 +84,14 @@ class TonnerCommands extends DrushCommands {
             if($newsArr->status==="ok"){
                 //Talk
                 $this->logger()->success(dt('News API Says GO!'));
-                echo(dt('News API Says GO!'));
+                echo(dt('News API Says GO!')).PHP_EOL;
                 //get the total results
                 $total = $newsArr->totalResults;
                 //Test that we have a res
                 if($total>0){
                     //talk
                     $this->logger()->success(dt('Found News Articles: total: '.$total));
-                    echo(dt('Found News Articles: total: '.$total));
+                    echo(dt('Found News Articles: total: '.$total)).PHP_EOL;
                     //Loop through the articles
                     foreach ($newsArr->articles as $article){
                         //Test for duplicates
@@ -103,13 +103,13 @@ class TonnerCommands extends DrushCommands {
                         if(empty($nids)){
                             echo ''.PHP_EOL;
                             $this->logger()->success(dt('Processing Article: '.$article->title));
-                            echo(dt('Processing Article: '.$article->title));
+                            echo(dt('Processing Article: '.$article->title)).PHP_EOL;
                             //Get the tones
                             $tones = $this->interpret($article->title,$article->description);
                             //----------------------------------------------------------------------------------------------------------
                             if(!empty($tones->document_tone->tones)){
                                 $this->logger()->success(dt('Generating Article: '.$article->title));
-                                echo(dt('Generating Article: '.$article->title));
+                                echo(dt('Generating Article: '.$article->title)).PHP_EOL;
                                 //Insert
                                 $edge_name = Node::create(['type' => 'news_headline']);
                                 $edge_name->set('title', $article->title);
@@ -170,30 +170,30 @@ class TonnerCommands extends DrushCommands {
                                 $edge_name->save();
                                 //talk
                                 $this->logger()->success(dt('********* New Article Inserted *********'));
-                                echo(dt('********* New Article Inserted *********'));
+                                echo(dt('********* New Article Inserted *********')).PHP_EOL;
                             }else{
                                 //Talk
                                 $this->logger()->error(dt('No Tones Found for Article: '.$article->title));
-                                echo(dt('No Tones Found for Article: '.$article->title));
+                                echo(dt('No Tones Found for Article: '.$article->title)).PHP_EOL;
                             }
                             //----------------------------------------------------------------------------------------------------------
                         }else{
                             //Talk
                             echo '.'.PHP_EOL;
                             $this->logger()->error(dt('Article Present: '.$article->title));
-                            echo(dt('Article Present: '.$article->title));
+                            echo(dt('Article Present: '.$article->title)).PHP_EOL;
                         }
                     }
                 }
             }else{
                 //Talk
                 $this->logger()->error(dt('News API Says NO!'));
-                echo(dt('News API Says NO!'));
+                echo(dt('News API Says NO!')).PHP_EOL;
             }
         //--------------------------------------------------------------------------------------------------------------
         //Talk
         $this->logger()->success(dt('News Import Process Has ended.'));
-        echo(dt('News Import Process Has ended.'));
+        echo(dt('News Import Process Has ended.')).PHP_EOL;
     }
 
     /**
