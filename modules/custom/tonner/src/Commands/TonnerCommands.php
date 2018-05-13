@@ -24,6 +24,36 @@ class TonnerCommands extends DrushCommands {
     public $password = 'hJaYPColsIiF';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
 
+  /**
+   * Tally the Countries Total Articles and Total Sentiment Scores.
+   *
+   * @usage tonner-tallyCountries
+   *   Usage description
+   *
+   * @command tonner:tallyCountries
+   * @aliases TCountries
+   */
+    public function tallyCountriesSentimentTotals(){
+      //Get the display date
+      $display_date_string = date('y-m-d h:i:s a',time());
+      //Talk
+      echo '************************* '.$display_date_string.': Tally Countries Process Started *************************'.PHP_EOL;
+      //--------------------------------------------------------------------------------------------------------------------------
+      //Get All the Terms in the Countries Vocab
+      $query = \Drupal::entityQuery('taxonomy_term');
+      $query->condition('vid', "country");
+      $tids = $query->execute();
+      $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+      //Loop Countries
+      foreach($terms as $country){
+        $c = \Drupal\taxonomy\Entity\Term::load($country->getId());
+        echo $c->getName().PHP_EOL;
+      }
+
+      //--------------------------------------------------------------------------------------------------------------------------
+      echo '************************* '.$display_date_string.': Tally Countries Process Ended *************************'.PHP_EOL;
+    }
+
     /**
      * Import News From Reuter.
      *
