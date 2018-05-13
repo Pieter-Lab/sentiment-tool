@@ -35,6 +35,7 @@ class TonnerCommands extends DrushCommands {
      */
     public function importNews() {
         //https://newsapi.org/sources
+        echo '*************************News Import Process Has Started.*************************'.PHP_EOL;
         //Import News Headlines for each Country
         $this->import('us','United States');
         $this->import('gb','United Kingdom');
@@ -45,6 +46,7 @@ class TonnerCommands extends DrushCommands {
         $this->import('nz','New Zealand');
         $this->import('za','South Africa');
 
+      echo '*************************News Import Process Has Started ended.*************************'.PHP_EOL;
 //        // the message
 //        $msg = "Sentiment Tool Import News has finished running ".date('m-d-Y h:i:s',time());
 //        // use wordwrap() if lines are longer than 70 characters
