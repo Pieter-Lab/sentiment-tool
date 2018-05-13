@@ -13,7 +13,8 @@
         "drupal/charts": "^3.0@alpha",
         "drupal/bootstrap": "^3.11",
         "drupal/breeze": "^1.11",
-        "drupal/core": "^8.5"
+        "drupal/core": "^8.5",
+        "drupal/field_collection": "^1.0@alpha"
     },
     "replace": {
         "drupal/core": "^8.5"
