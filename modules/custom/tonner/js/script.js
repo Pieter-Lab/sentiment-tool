@@ -88,7 +88,6 @@
             //Draw pie chart
             google.charts.setOnLoadCallback(totalPieChart);
             google.charts.setOnLoadCallback(drawVisualization);
-
             //Pie Chat Total Function
             function totalPieChart() {
                 //Set the Data holder and top line
@@ -109,8 +108,7 @@
                 //finalise
                 chart.draw(data, options);
             }
-
-
+            //Curve chart
             function drawVisualization() {
                 //set chart data
                 var chartData = [];
@@ -143,6 +141,13 @@
                 var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
                 chart.draw(data, options);
             }
+
+              $(window).resize(function(){
+                currentPieChart();
+                historicalChart();
+                totalPieChart();
+                drawVisualization();
+              });
 
         }
     };
