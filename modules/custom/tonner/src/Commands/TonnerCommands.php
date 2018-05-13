@@ -20,8 +20,8 @@ use Drupal\node\Entity\Node;
 class TonnerCommands extends DrushCommands {
 
     //IBM WATSON KEYS
-    public $username = '460eb607-515a-477d-87f9-6d74eafb368f';
-    public $password = 'sltfa7cagx5r';
+    public $username = '75ac9d7b-9070-4135-afd8-76eb467ea714';
+    public $password = 'hJaYPColsIiF';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
 
     /**
