@@ -12,7 +12,8 @@
         "drush/drush": "^9.2",
         "drupal/charts": "^3.0@alpha",
         "drupal/bootstrap": "^3.11",
-        "drupal/breeze": "^1.11"
+        "drupal/breeze": "^1.11",
+        "drupal/core": "^8.5"
     },
     "replace": {
         "drupal/core": "^8.5"
