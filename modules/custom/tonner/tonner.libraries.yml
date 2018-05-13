@@ -1,0 +1,11 @@
+google_graphs:
+  js:
+    https://www.gstatic.com/charts/loader.js: {}
+tonner_worker:
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - tonner/google_graphs

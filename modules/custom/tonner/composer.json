@@ -1,0 +1,14 @@
+{
+  "name": "drupal/tonner",
+  "type": "drupal-module",
+  "description": "News and Tonner generator",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/tonner",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/tonner",
+    "source": "http://cgit.drupalcode.org/tonner"
+  },
+  "require": { }
+}

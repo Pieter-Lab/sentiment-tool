@@ -1,0 +1,5 @@
+services:
+  tonner.commands:
+    class: \Drupal\tonner\Commands\TonnerCommands
+    tags:
+      - { name: drush.command }
