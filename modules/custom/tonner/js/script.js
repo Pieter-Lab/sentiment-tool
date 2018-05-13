@@ -147,6 +147,11 @@
                 historicalChart();
                 totalPieChart();
                 drawVisualization();
+                //Current daily tones
+                google.charts.setOnLoadCallback(currentPieChart);
+                google.charts.setOnLoadCallback(historicalChart);
+                google.charts.setOnLoadCallback(totalPieChart);
+                google.charts.setOnLoadCallback(drawVisualization);
               });
 
         }
