@@ -20,6 +20,8 @@ use Drupal\node\Entity\Node;
 class TonnerCommands extends DrushCommands {
 
     //IBM WATSON KEYS
+    private $prefix = "#######################################";
+    private $suffix = "#######################################".PHP_EOL;
     public $username = '4cd55591-5a79-4543-a5a2-8f3b7b4941c1';
     public $password = 'Y7j2q6get4Q6';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
@@ -47,7 +49,7 @@ class TonnerCommands extends DrushCommands {
       //Get the display date
       $display_date_string = date('Y-m-d h:i:s a',time());
       //Talk
-      echo '************************* '.$display_date_string.': Tally Countries Process Started *************************'.PHP_EOL;
+      echo $this->prefix.' '.$display_date_string.': Tally Countries Process Started *************************'.PHP_EOL;
       //--------------------------------------------------------------------------------------------------------------------------
       //Get All the Terms in the Tones Vocab
       $query = \Drupal::entityQuery('taxonomy_term');
@@ -64,8 +66,8 @@ class TonnerCommands extends DrushCommands {
       foreach($terms as $country){
         $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
         //Entity Query to get all articles listed
-//        echo $countryTerm->getName().PHP_EOL;
-//        echo $countryTerm->id().PHP_EOL;
+//        echo $this->prefix.$countryTerm->getName().PHP_EOL;
+//        echo $this->prefix.$countryTerm->id().PHP_EOL;
         $query = \Drupal::entityQuery('node')
           ->condition('type', 'news_headline')
           ->condition('field_country', $countryTerm->id(), '=');
@@ -77,8 +79,7 @@ class TonnerCommands extends DrushCommands {
         //save
         $countryTerm->save();
         //Talk
-        echo('----------------------------------------------------------------------------------------------------------------------------------').PHP_EOL;
-        echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######'.PHP_EOL;
+        echo  $this->prefix." Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######'.PHP_EOL;
         //----------------------------------------------------------------------
           //Loop Tones
           foreach($toneTerms as $tone) {
@@ -97,14 +98,14 @@ class TonnerCommands extends DrushCommands {
             $fc->setHostEntity($countryTerm);
             $fc->save();
             //Talk
-            echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Tone "'.$toneTerm->getName().'" Articles: '.count($tNids).' #######'.PHP_EOL;
+            echo  $this->prefix." Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Tone "'.$toneTerm->getName().'" Articles: '.count($tNids).' #######'.PHP_EOL;
           }
           //save
           $countryTerm->save();
         //----------------------------------------------------------------------
       }
       //--------------------------------------------------------------------------------------------------------------------------
-      echo '************************* '.$display_date_string.': Tally Countries Process Ended *************************'.PHP_EOL;
+      echo  $this->prefix.' '.$display_date_string.': Tally Countries Process Ended *************************'.PHP_EOL;
     }
 
     /**
@@ -118,16 +119,16 @@ class TonnerCommands extends DrushCommands {
      */
     public function importNews() {
         //https://newsapi.org/sources
-        echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has started.*************************'.PHP_EOL;
+        echo  $this->prefix.'  '.date('y-m-d h:i:s a',time()).': News Import Process Has started.*************************'.PHP_EOL;
         //Import News Headlines for each Country per industry
         foreach($this->import_countries as $cCode => $cName){
           foreach($this->indusrties as $industry){
             //Talk
-            echo '************************* '.date('y-m-d h:i:s a',time()).': '.$cName.': Importing for - '.$industry.'.*************************'.PHP_EOL;
+            echo  $this->prefix.' '.date('y-m-d h:i:s a',time()).': '.$cName.': Importing for - '.$industry.'.*************************'.PHP_EOL;
             $this->import($cCode,$cName,$industry);
           }
         }
-        echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has Ended.*************************'.PHP_EOL;
+        echo  $this->prefix.' '.date('y-m-d h:i:s a',time()).': News Import Process Has Ended.*************************'.PHP_EOL;
     }
 
   /**
@@ -140,7 +141,7 @@ class TonnerCommands extends DrushCommands {
    */
     public function import($counrty_code,$country_title,$industry) {
         //talk
-        echo(dt('News Import Process Has started.')).PHP_EOL;
+      echo  $this->prefix.' '.(dt('News Import Process Has started.')).$this->suffix;
         //--------------------------------------------------------------------------------------------------------------
             # An HTTP GET request example
             //Api headlines endpoint
@@ -159,13 +160,13 @@ class TonnerCommands extends DrushCommands {
             //Test that we have data
             if($newsArr->status==="ok"){
                 //Talk
-                echo(dt('News API Says GO!')).PHP_EOL;
+              echo  $this->prefix.' '.(dt('News API Says GO!')).$this->suffix;
                 //get the total results
                 $total = $newsArr->totalResults;
                 //Test that we have a res
                 if($total>0){
                     //talk
-                    echo(dt('Found News Articles: total: '.$total)).PHP_EOL;
+                  echo  $this->prefix.' '.(dt('Found News Articles: total: '.$total)).$this->suffix;
                     //Loop through the articles
                     foreach ($newsArr->articles as $article){
                         //Test for duplicates
@@ -175,12 +176,12 @@ class TonnerCommands extends DrushCommands {
                         $nids = $query->execute();
                         //test
                         if(empty($nids)){
-                            echo(dt('Processing Article: '.$article->title)).PHP_EOL;
+                          echo  $this->prefix.' '.(dt('Processing Article: '.$article->title)).$this->suffix;
                             //Get the tones
                             $tones = $this->interpret($article->title,$article->description);
                             //----------------------------------------------------------------------------------------------------------
                             if(!empty($tones->document_tone->tones)){
-                                echo(dt('Generating Article: '.$article->title)).PHP_EOL;
+                              echo  $this->prefix.' '.(dt('Generating Article: '.$article->title)).$this->suffix;
                                 //Insert
                                 $edge_name = Node::create(['type' => 'news_headline']);
                                 $edge_name->set('title', $article->title);
@@ -206,8 +207,6 @@ class TonnerCommands extends DrushCommands {
                                     //image file_name
                                     $ImageFileName = basename($article->urlToImage);
                                     if(!empty($ImageFileName) && strlen($ImageFileName) < 200){
-                                      //Talk
-                                      echo '#######/ '.strlen($article->urlToImage).' / '.$article->urlToImage.' /################'.PHP_EOL;
                                       //Set the Image directory
                                       $ImageDirectory = 'public://headline_images/';
                                       if(file_prepare_directory($ImageDirectory, FILE_CREATE_DIRECTORY)){
@@ -250,26 +249,25 @@ class TonnerCommands extends DrushCommands {
                                 $edge_name->enforceIsNew();
                                 $edge_name->save();
                                 //talk
-                                echo(dt('********* New Article Inserted *********')).PHP_EOL;
+                              echo  $this->prefix.' '.(dt('********* New Article Inserted *********')).$this->suffix;
                             }else{
                                 //Talk
-                                echo(dt('No Tones Found for Article: '.$article->title)).PHP_EOL;
+                              echo  $this->prefix.' '.(dt('No Tones Found for Article: '.$article->title)).$this->suffix;
                             }
                             //----------------------------------------------------------------------------------------------------------
                         }else{
                             //Talk
-                            echo '.'.PHP_EOL;
-                            echo(dt('Article Present: '.$article->title)).PHP_EOL;
+                          echo  $this->prefix.' '.(dt('Article Present: '.$article->title)).$this->suffix;
                         }
                     }
                 }
             }else{
                 //Talk
-                echo(dt('News API Says NO!')).PHP_EOL;
+              echo  $this->prefix.' '.(dt('News API Says NO!')).$this->suffix;
             }
         //--------------------------------------------------------------------------------------------------------------
         //Talk
-        echo(dt('News Import Process Has ended.')).PHP_EOL;
+      echo  $this->prefix.' '.(dt('News Import Process Has ended.')).$this->suffix;
     }
 
     /**
