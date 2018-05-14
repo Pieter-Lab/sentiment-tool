@@ -59,7 +59,7 @@ class TonnerCommands extends DrushCommands {
         $countryTerm->field_sentiment_totals->setValue($ct_total_articles);
         //Talk
         echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######';
-        $this->printer($nids);
+//        $this->printer($nids);
         exit();
       }
 
