@@ -56,14 +56,22 @@ class TonnerCommands extends DrushCommands {
         $nids = $query->execute();
         //Get and set the Total Article count
         $ct_total_articles = count($nids);
-        $countryTerm->field_sentiment_totals->setValue([]);
+        $countryTerm->field_sentiment_totals->setValue([]);//Clear out previous sentiments
         $countryTerm->field_total_number_of_articles->setValue($ct_total_articles);
         //save
         $countryTerm->save();
         //Talk
         echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######';
-//        $this->printer($nids);
+        //----------------------------------------------------------------------
+        $fc = \Drupal\field_collection\Entity\FieldCollectionItem::create(['field_name' => 'field_sentiment_totals']);
+        $fc->field_sentiment->setValue(['target_id'=>4]);
+        $fc->field_total->setValue($ct_total_articles);
+        $fc->setHostEntity($countryTerm);
+        $fc->save();
+        //save
+        $countryTerm->save();
         exit();
+        //----------------------------------------------------------------------
       }
 
       //--------------------------------------------------------------------------------------------------------------------------
