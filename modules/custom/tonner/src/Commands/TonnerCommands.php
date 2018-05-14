@@ -67,7 +67,7 @@ class TonnerCommands extends DrushCommands {
         //save
         $countryTerm->save();
         //Talk
-        echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######';
+        echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######'.PHP_EOL;
         //----------------------------------------------------------------------
           //Loop Tones
           foreach($toneTerms as $tone) {
@@ -76,6 +76,7 @@ class TonnerCommands extends DrushCommands {
             //Count
             $tQuery = \Drupal::entityQuery('node')
               ->condition('type', 'news_headline')
+              ->condition('field_country', $countryTerm->id(), '=')
               ->condition('field_tone', $toneTerm->id(), '=');
             $tNids = $query->execute();
             //set
@@ -85,7 +86,7 @@ class TonnerCommands extends DrushCommands {
             $fc->setHostEntity($countryTerm);
             $fc->save();
             //Talk
-            echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Tone "'.$toneTerm->getName().'" Articles: '.count($tNids).' #######';
+            echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Tone "'.$toneTerm->getName().'" Articles: '.count($tNids).' #######'.PHP_EOL;
           }
           //save
           $countryTerm->save();
