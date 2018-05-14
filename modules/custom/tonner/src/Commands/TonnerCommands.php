@@ -50,6 +50,11 @@ class TonnerCommands extends DrushCommands {
       $display_date_string = date('Y-m-d h:i:s a',time());
       //Talk
       echo $this->prefix.' '.$display_date_string.': Tally Countries Process Started *************************'.PHP_EOL;
+      //Get All the Terms in the Tones Vocab
+      $query = \Drupal::entityQuery('taxonomy_term');
+      $query->condition('vid', "industry");
+      $tids = $query->execute();
+      $industryTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
       //--------------------------------------------------------------------------------------------------------------------------
       //Get All the Terms in the Tones Vocab
       $query = \Drupal::entityQuery('taxonomy_term');
@@ -99,6 +104,25 @@ class TonnerCommands extends DrushCommands {
             $fc->save();
             //Talk
             echo  $this->prefix." Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Tone "'.$toneTerm->getName().'" Articles: '.count($tNids).' #######'.PHP_EOL;
+          }
+          //Loop Industry
+          foreach($industryTerms as $industry) {
+            //load term
+            $industryTerm = \Drupal\taxonomy\Entity\Term::load($industry->Id());
+            //Count
+            $iQuery = \Drupal::entityQuery('node')
+              ->condition('type', 'news_headline')
+              ->condition('field_country', $countryTerm->id(), '=')
+              ->condition('field_article_industry', $industryTerm->id(), '=');
+            $iNids = $iQuery->execute();
+            //set
+            $fc = \Drupal\field_collection\Entity\FieldCollectionItem::create(['field_name' => 'field_industry_totals']);
+            $fc->field_industry->setValue(['target_id'=>$industryTerm->id()]);
+            $fc->field_industry_total->setValue(count($iNids));
+            $fc->setHostEntity($countryTerm);
+            $fc->save();
+            //Talk
+            echo  $this->prefix." Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Industry "'.$industryTerm->getName().'" Articles: '.count($iNids).' #######'.PHP_EOL;
           }
           //save
           $countryTerm->save();
