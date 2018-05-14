@@ -205,6 +205,7 @@ class TonnerCommands extends DrushCommands {
                                 //Image
                                     //image file_name
                                     $ImageFileName = basename($article->urlToImage);
+                                    echo '#######/ '.strlen($article->urlToImage).' / '.$article->urlToImage.' /################'.PHP_EOL;
                                     //Set the Image directory
                                     $ImageDirectory = 'public://headline_images/';
                                     if(file_prepare_directory($ImageDirectory, FILE_CREATE_DIRECTORY)){
