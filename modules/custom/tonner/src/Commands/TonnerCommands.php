@@ -287,7 +287,7 @@ class TonnerCommands extends DrushCommands {
         //Convert to JSON
         $json = json_decode($data);
         //Test
-        if(empty($json->document_tone->tones)){
+        if(empty($json->document_tone->tones) && !empty($description)){
             //Try on description
             //call
             $data = file_get_contents($this->url.'&text='.urlencode($description), false, $context);
