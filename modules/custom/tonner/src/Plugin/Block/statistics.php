@@ -35,6 +35,7 @@ class statistics extends BlockBase {
                 ->condition('type', 'news_headline')
                 ->condition('field_tone',$tone['tid'],'=')
                 ->sort('title')
+                ->limit(200)
                 ->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
             //Loop for historical
