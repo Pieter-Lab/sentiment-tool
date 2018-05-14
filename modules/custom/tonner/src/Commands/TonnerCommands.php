@@ -205,7 +205,7 @@ class TonnerCommands extends DrushCommands {
                                 //Image
                                     //image file_name
                                     $ImageFileName = basename($article->urlToImage);
-                                    if(!empty($ImageFileName)){
+                                    if(!empty($ImageFileName) && strlen($ImageFileName) < 255){
                                       //Talk
                                       echo '#######/ '.strlen($article->urlToImage).' / '.$article->urlToImage.' /################'.PHP_EOL;
                                       //Set the Image directory
