@@ -109,6 +109,7 @@ class TonnerCommands extends DrushCommands {
     public function importNews() {
         //https://newsapi.org/sources
         echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has started.*************************'.PHP_EOL;
+        exit("New Calls in process!");
         //Import News Headlines for each Country
         $this->import('us','United States');
         $this->import('gb','United Kingdom');
