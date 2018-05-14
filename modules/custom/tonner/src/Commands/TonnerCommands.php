@@ -35,7 +35,7 @@ class TonnerCommands extends DrushCommands {
    */
     public function tallyCountriesSentimentTotals(){
       //Get the display date
-      $display_date_string = date('y-m-d h:i:s a',time());
+      $display_date_string = date('Y-m-d h:i:s a',time());
       //Talk
       echo '************************* '.$display_date_string.': Tally Countries Process Started *************************'.PHP_EOL;
       //--------------------------------------------------------------------------------------------------------------------------
@@ -57,6 +57,8 @@ class TonnerCommands extends DrushCommands {
         //Get and set the Total Article count
         $ct_total_articles = count($nids);
         $countryTerm->field_sentiment_totals->setValue($ct_total_articles);
+        //save
+        $countryTerm->save();
         //Talk
         echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######';
 //        $this->printer($nids);
