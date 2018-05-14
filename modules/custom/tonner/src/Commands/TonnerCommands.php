@@ -180,8 +180,6 @@ class TonnerCommands extends DrushCommands {
                             $tones = $this->interpret($article->title,$article->description);
                             //----------------------------------------------------------------------------------------------------------
                             if(!empty($tones->document_tone->tones)){
-                              $this->printer($article);
-                              exit("FUCCK!!!");
                                 echo(dt('Generating Article: '.$article->title)).PHP_EOL;
                                 //Insert
                                 $edge_name = Node::create(['type' => 'news_headline']);
@@ -203,8 +201,7 @@ class TonnerCommands extends DrushCommands {
                                     //update term
                                     $edge_name->set('field_source', $source_term_id);
                                 }
-                                echo '----------------'.$article->field_url.'----------------------'.PHP_EOL;
-                                $edge_name->set('field_url', $article->field_url);
+                                $edge_name->set('field_url', $article->url);
                                 //Image
                                     //image file_name
                                     $ImageFileName = basename($article->urlToImage);
