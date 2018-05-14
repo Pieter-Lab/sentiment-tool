@@ -7,7 +7,8 @@ files/
 sites/*/files
 sites/*/private
 sites/*/translations
-
+sites/default/files/*
+sites/default/files/headline_images/*
 # Ignore default text files
 robots.txt
 /CHANGELOG.txt
