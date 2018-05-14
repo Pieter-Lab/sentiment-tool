@@ -24,6 +24,15 @@ class TonnerCommands extends DrushCommands {
     public $password = 'ePNrLyfsiJDW';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
     private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
+    private $import_countries = [
+      'gb'=>'United Kingdom',
+      'us'=>'United States',
+      'au'=>'Australia',
+      'in'=>'India',
+      'ca'=>'China',
+      'ie'=>'Ireland',
+      'nz'=>'New Zealand',
+      'za'=>'South Africa'];
 
   /**
    * Tally the Countries Total Articles and Total Sentiment Scores.
@@ -111,23 +120,13 @@ class TonnerCommands extends DrushCommands {
         //https://newsapi.org/sources
         echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has started.*************************'.PHP_EOL;
         //Import News Headlines for each Country per industry
-        foreach($this->indusrties as $industry){
-          //Talk
-          echo '************************* '.date('y-m-d h:i:s a',time()).': Importing '.$industry.'.*************************'.PHP_EOL;
-          $this->import('us','United States',$industry);
-          echo $industry.PHP_EOL;
+        foreach($this->import_countries as $cCode => $cName){
+          foreach($this->indusrties as $industry){
+            //Talk
+            echo '************************* '.date('y-m-d h:i:s a',time()).':'.$cName.': Importing for - '.$industry.'.*************************'.PHP_EOL;
+            $this->import($cCode,$cName,$industry);
+          }
         }
-        exit("New Calls in process!");
-
-
-        $this->import('gb','United Kingdom');
-        $this->import('au','Australia');
-        $this->import('ca','China');
-        $this->import('in','India');
-        $this->import('ie','Ireland');
-        $this->import('nz','New Zealand');
-        $this->import('za','South Africa');
-
         echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has Ended.*************************'.PHP_EOL;
     }
 
