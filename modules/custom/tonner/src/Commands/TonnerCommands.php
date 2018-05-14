@@ -112,11 +112,14 @@ class TonnerCommands extends DrushCommands {
         echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has started.*************************'.PHP_EOL;
         //Import News Headlines for each Country per industry
         foreach($this->indusrties as $industry){
+          //Talk
+          echo '************************* '.date('y-m-d h:i:s a',time()).': Importing '.$industry.'.*************************'.PHP_EOL;
+          $this->import('us','United States',$industry);
           echo $industry.PHP_EOL;
         }
         exit("New Calls in process!");
 
-        $this->import('us','United States');
+
         $this->import('gb','United Kingdom');
         $this->import('au','Australia');
         $this->import('ca','China');
@@ -128,20 +131,21 @@ class TonnerCommands extends DrushCommands {
         echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has Ended.*************************'.PHP_EOL;
     }
 
-    /**
-     * Import Tunner
-     * @param $counrty_code
-     * @param $country_title
-     * @throws \Drupal\Core\Entity\EntityStorageException
-     */
-    public function import($counrty_code,$country_title) {
+  /**
+   * Main Importer for Reuters
+   * @param $counrty_code
+   * @param $country_title
+   * @param $industry
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+    public function import($counrty_code,$country_title,$industry) {
         //talk
-        $this->logger()->success(dt('News Import Process Has started.'));
         echo(dt('News Import Process Has started.')).PHP_EOL;
         //--------------------------------------------------------------------------------------------------------------
             # An HTTP GET request example
             //Api headlines endpoint
-            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&apiKey=451ed6d47caf4d52b8e867b97a2f76ee';
+            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=451ed6d47caf4d52b8e867b97a2f76ee';
             $country_name = $country_title;
             //----------------------------------------------------------------------------------------------------------------------
             $ch = curl_init($url);
@@ -156,14 +160,12 @@ class TonnerCommands extends DrushCommands {
             //Test that we have data
             if($newsArr->status==="ok"){
                 //Talk
-                $this->logger()->success(dt('News API Says GO!'));
                 echo(dt('News API Says GO!')).PHP_EOL;
                 //get the total results
                 $total = $newsArr->totalResults;
                 //Test that we have a res
                 if($total>0){
                     //talk
-                    $this->logger()->success(dt('Found News Articles: total: '.$total));
                     echo(dt('Found News Articles: total: '.$total)).PHP_EOL;
                     //Loop through the articles
                     foreach ($newsArr->articles as $article){
@@ -175,13 +177,11 @@ class TonnerCommands extends DrushCommands {
                         //test
                         if(empty($nids)){
                             echo ''.PHP_EOL;
-                            $this->logger()->success(dt('Processing Article: '.$article->title));
                             echo(dt('Processing Article: '.$article->title)).PHP_EOL;
                             //Get the tones
                             $tones = $this->interpret($article->title,$article->description);
                             //----------------------------------------------------------------------------------------------------------
                             if(!empty($tones->document_tone->tones)){
-                                $this->logger()->success(dt('Generating Article: '.$article->title));
                                 echo(dt('Generating Article: '.$article->title)).PHP_EOL;
                                 //Insert
                                 $edge_name = Node::create(['type' => 'news_headline']);
@@ -220,6 +220,12 @@ class TonnerCommands extends DrushCommands {
                                             ]);
                                         }
                                     }
+                                //Industry
+                                $industry_term_id = $this->get_vocabulary_term($industry ,'industry');
+                                if(!empty($industry_term_id)){
+                                  //update term
+                                  $edge_name->set('field_article_industry', $industry_term_id);
+                                }
                                 //Country
                                 $country_term_id = $this->get_vocabulary_term($country_name ,'country');
                                 if(!empty($country_term_id)){
@@ -242,30 +248,25 @@ class TonnerCommands extends DrushCommands {
                                 $edge_name->enforceIsNew();
                                 $edge_name->save();
                                 //talk
-                                $this->logger()->success(dt('********* New Article Inserted *********'));
                                 echo(dt('********* New Article Inserted *********')).PHP_EOL;
                             }else{
                                 //Talk
-                                $this->logger()->error(dt('No Tones Found for Article: '.$article->title));
                                 echo(dt('No Tones Found for Article: '.$article->title)).PHP_EOL;
                             }
                             //----------------------------------------------------------------------------------------------------------
                         }else{
                             //Talk
                             echo '.'.PHP_EOL;
-                            $this->logger()->error(dt('Article Present: '.$article->title));
                             echo(dt('Article Present: '.$article->title)).PHP_EOL;
                         }
                     }
                 }
             }else{
                 //Talk
-                $this->logger()->error(dt('News API Says NO!'));
                 echo(dt('News API Says NO!')).PHP_EOL;
             }
         //--------------------------------------------------------------------------------------------------------------
         //Talk
-        $this->logger()->success(dt('News Import Process Has ended.'));
         echo(dt('News Import Process Has ended.')).PHP_EOL;
     }
 
