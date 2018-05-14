@@ -67,6 +67,7 @@ class TonnerCommands extends DrushCommands {
         //save
         $countryTerm->save();
         //Talk
+        echo('----------------------------------------------------------------------------------------------------------------------------------').PHP_EOL;
         echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######'.PHP_EOL;
         //----------------------------------------------------------------------
           //Loop Tones
