@@ -249,7 +249,7 @@ class TonnerCommands extends DrushCommands {
                                 $edge_name->enforceIsNew();
                                 $edge_name->save();
                                 //talk
-                              echo  $this->prefix.' '.(dt('********* New Article Inserted *********')).$this->suffix;
+                              echo  $this->prefix.' '.(dt(' --------------- New Article Inserted --------------- ')).$this->suffix;
                             }else{
                                 //Talk
                               echo  $this->prefix.' '.(dt('No Tones Found for Article: '.$article->title)).$this->suffix;
