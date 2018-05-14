@@ -56,7 +56,8 @@ class TonnerCommands extends DrushCommands {
         $nids = $query->execute();
         //Get and set the Total Article count
         $ct_total_articles = count($nids);
-        $countryTerm->field_sentiment_totals->set($ct_total_articles);
+        $countryTerm->field_sentiment_totals->setValue([]);
+        $countryTerm->field_total_number_of_articles->setValue($ct_total_articles);
         //save
         $countryTerm->save();
         //Talk
