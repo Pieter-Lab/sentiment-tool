@@ -123,7 +123,7 @@ class TonnerCommands extends DrushCommands {
         foreach($this->import_countries as $cCode => $cName){
           foreach($this->indusrties as $industry){
             //Talk
-            echo '************************* '.date('y-m-d h:i:s a',time()).':'.$cName.': Importing for - '.$industry.'.*************************'.PHP_EOL;
+            echo '************************* '.date('y-m-d h:i:s a',time()).': '.$cName.': Importing for - '.$industry.'.*************************'.PHP_EOL;
             $this->import($cCode,$cName,$industry);
           }
         }
@@ -175,7 +175,6 @@ class TonnerCommands extends DrushCommands {
                         $nids = $query->execute();
                         //test
                         if(empty($nids)){
-                            echo ''.PHP_EOL;
                             echo(dt('Processing Article: '.$article->title)).PHP_EOL;
                             //Get the tones
                             $tones = $this->interpret($article->title,$article->description);
