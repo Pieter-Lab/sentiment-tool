@@ -78,7 +78,7 @@ class TonnerCommands extends DrushCommands {
               ->condition('type', 'news_headline')
               ->condition('field_country', $countryTerm->id(), '=')
               ->condition('field_tone', $toneTerm->id(), '=');
-            $tNids = $query->execute();
+            $tNids = $tQuery->execute();
             //set
             $fc = \Drupal\field_collection\Entity\FieldCollectionItem::create(['field_name' => 'field_sentiment_totals']);
             $fc->field_sentiment->setValue(['target_id'=>$toneTerm->id()]);
