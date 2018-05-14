@@ -34,8 +34,8 @@ class statistics extends BlockBase {
             $result = \Drupal::entityQuery('node')
                 ->condition('type', 'news_headline')
                 ->condition('field_tone',$tone['tid'],'=')
+                ->condition('field_publishedat',strtotime(date('Y-m-d'),strtotime('-3 day')),'>=')
                 ->sort('title')
-                ->limit(200)
                 ->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
             //Loop for historical
