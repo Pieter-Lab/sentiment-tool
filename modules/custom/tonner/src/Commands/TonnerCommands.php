@@ -205,19 +205,22 @@ class TonnerCommands extends DrushCommands {
                                 //Image
                                     //image file_name
                                     $ImageFileName = basename($article->urlToImage);
-                                    echo '#######/ '.strlen($article->urlToImage).' / '.$article->urlToImage.' /################'.PHP_EOL;
-                                    //Set the Image directory
-                                    $ImageDirectory = 'public://headline_images/';
-                                    if(file_prepare_directory($ImageDirectory, FILE_CREATE_DIRECTORY)){
+                                    if(!empty($ImageFileName)){
+                                      //Talk
+                                      echo '#######/ '.strlen($article->urlToImage).' / '.$article->urlToImage.' /################'.PHP_EOL;
+                                      //Set the Image directory
+                                      $ImageDirectory = 'public://headline_images/';
+                                      if(file_prepare_directory($ImageDirectory, FILE_CREATE_DIRECTORY)){
                                         // Create file object from a remotely copied file.
                                         $data = file_get_contents($article->urlToImage);
                                         if($data && !empty($data)){
-                                            $file = file_save_data($data, $ImageDirectory.$ImageFileName, FILE_EXISTS_REPLACE);;
-                                            //add to image array holder
-                                            $edge_name->set('field_urltoimage', [
-                                                'target_id' => $file->id()
-                                            ]);
+                                          $file = file_save_data($data, $ImageDirectory.$ImageFileName, FILE_EXISTS_REPLACE);;
+                                          //add to image array holder
+                                          $edge_name->set('field_urltoimage', [
+                                            'target_id' => $file->id()
+                                          ]);
                                         }
+                                      }
                                     }
                                 //Industry
                                 $industry_term_id = $this->get_vocabulary_term($industry ,'industry');
