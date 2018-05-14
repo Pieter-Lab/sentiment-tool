@@ -48,13 +48,17 @@ class TonnerCommands extends DrushCommands {
       foreach($terms as $country){
         $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
         //Entity Query to get all articles listed
-        echo $countryTerm->getName().PHP_EOL;
-        echo $countryTerm->id().PHP_EOL;
-
+//        echo $countryTerm->getName().PHP_EOL;
+//        echo $countryTerm->id().PHP_EOL;
         $query = \Drupal::entityQuery('node')
           ->condition('type', 'news_headline')
           ->condition('field_country', $countryTerm->id(), '=');
         $nids = $query->execute();
+        //Get and set the Total Article count
+        $ct_total_articles = count($nids);
+        $countryTerm->field_sentiment_totals->setValue($ct_total_articles);
+        //Talk
+        echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######';
         $this->printer($nids);
         exit();
       }
