@@ -39,6 +39,12 @@ class TonnerCommands extends DrushCommands {
       //Talk
       echo '************************* '.$display_date_string.': Tally Countries Process Started *************************'.PHP_EOL;
       //--------------------------------------------------------------------------------------------------------------------------
+      //Get All the Terms in the Tones Vocab
+      $query = \Drupal::entityQuery('taxonomy_term');
+      $query->condition('vid', "tones");
+      $tids = $query->execute();
+      $toneTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+      //--------------------------------------------------------------------------------------------------------------------------
       //Get All the Terms in the Countries Vocab
       $query = \Drupal::entityQuery('taxonomy_term');
       $query->condition('vid', "country");
@@ -63,13 +69,26 @@ class TonnerCommands extends DrushCommands {
         //Talk
         echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Articles: '.$ct_total_articles.' #######';
         //----------------------------------------------------------------------
-        $fc = \Drupal\field_collection\Entity\FieldCollectionItem::create(['field_name' => 'field_sentiment_totals']);
-        $fc->field_sentiment->setValue(['target_id'=>4]);
-        $fc->field_total->setValue($ct_total_articles);
-        $fc->setHostEntity($countryTerm);
-        $fc->save();
-        //save
-        $countryTerm->save();
+          //Loop Tones
+          foreach($toneTerms as $tone) {
+            //load term
+            $toneTerm = \Drupal\taxonomy\Entity\Term::load($tone->Id());
+            //Count
+            $tQuery = \Drupal::entityQuery('node')
+              ->condition('type', 'news_headline')
+              ->condition('field_tone', $toneTerm->id(), '=');
+            $tNids = $query->execute();
+            //set
+            $fc = \Drupal\field_collection\Entity\FieldCollectionItem::create(['field_name' => 'field_sentiment_totals']);
+            $fc->field_sentiment->setValue(['target_id'=>$toneTerm->id()]);
+            $fc->field_total->setValue(count($tNids));
+            $fc->setHostEntity($countryTerm);
+            $fc->save();
+            //Talk
+            echo "####### Date Stamp: ".$display_date_string.': '.$countryTerm->getName().': Total Tone "'.$toneTerm->getName().'" Articles: '.count($tNids).' #######';
+          }
+          //save
+          $countryTerm->save();
         exit();
         //----------------------------------------------------------------------
       }
