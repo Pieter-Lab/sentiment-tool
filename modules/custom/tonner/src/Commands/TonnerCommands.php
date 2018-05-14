@@ -53,7 +53,7 @@ class TonnerCommands extends DrushCommands {
 
         $query = \Drupal::entityQuery('node')
           ->condition('type', 'news_headline')
-          ->condition('field_country', 'tid', TERM_ID);
+          ->condition('field_country', $c->id(), '=');
         $nids = $query->execute();
         $this->printer($nids);
         exit();
