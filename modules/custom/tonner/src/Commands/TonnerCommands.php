@@ -23,6 +23,7 @@ class TonnerCommands extends DrushCommands {
     public $username = '6c0222b3-4d01-467e-b0f1-89ec5910d6b1';
     public $password = 'ePNrLyfsiJDW';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
+    private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
 
   /**
    * Tally the Countries Total Articles and Total Sentiment Scores.
@@ -109,8 +110,12 @@ class TonnerCommands extends DrushCommands {
     public function importNews() {
         //https://newsapi.org/sources
         echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has started.*************************'.PHP_EOL;
+        //Import News Headlines for each Country per industry
+        foreach($this->indusrties as $industry){
+          echo $industry.PHP_EOL;
+        }
         exit("New Calls in process!");
-        //Import News Headlines for each Country
+
         $this->import('us','United States');
         $this->import('gb','United Kingdom');
         $this->import('au','Australia');
