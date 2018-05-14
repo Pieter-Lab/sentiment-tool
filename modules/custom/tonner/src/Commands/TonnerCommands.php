@@ -51,10 +51,12 @@ class TonnerCommands extends DrushCommands {
         echo $c->getName().PHP_EOL;
         echo $c->id().PHP_EOL;
 
-//        $query = \Drupal::entityQuery('node')
-//          ->condition('type', 'news_headline')
-//          ->condition('field_country', 'tid', TERM_ID);
-//        $nids = $query->execute();
+        $query = \Drupal::entityQuery('node')
+          ->condition('type', 'news_headline')
+          ->condition('field_country', 'tid', TERM_ID);
+        $nids = $query->execute();
+        $this->printer($nids);
+        exit();
       }
 
       //--------------------------------------------------------------------------------------------------------------------------
