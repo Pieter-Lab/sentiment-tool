@@ -180,6 +180,8 @@ class TonnerCommands extends DrushCommands {
                             $tones = $this->interpret($article->title,$article->description);
                             //----------------------------------------------------------------------------------------------------------
                             if(!empty($tones->document_tone->tones)){
+                              $this->printer($article);
+                              exit("FUCCK!!!");
                                 echo(dt('Generating Article: '.$article->title)).PHP_EOL;
                                 //Insert
                                 $edge_name = Node::create(['type' => 'news_headline']);
