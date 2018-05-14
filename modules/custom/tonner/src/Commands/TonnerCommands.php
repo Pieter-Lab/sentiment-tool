@@ -46,14 +46,14 @@ class TonnerCommands extends DrushCommands {
       $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
       //Loop Countries
       foreach($terms as $country){
-        $c = \Drupal\taxonomy\Entity\Term::load($country->Id());
-        //Entity Query to get
-        echo $c->getName().PHP_EOL;
-        echo $c->id().PHP_EOL;
+        $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
+        //Entity Query to get all articles listed
+        echo $countryTerm->getName().PHP_EOL;
+        echo $countryTerm->id().PHP_EOL;
 
         $query = \Drupal::entityQuery('node')
           ->condition('type', 'news_headline')
-          ->condition('field_country', $c->id(), '=');
+          ->condition('field_country', $countryTerm->id(), '=');
         $nids = $query->execute();
         $this->printer($nids);
         exit();
