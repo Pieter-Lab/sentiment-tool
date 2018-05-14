@@ -202,6 +202,7 @@ class TonnerCommands extends DrushCommands {
                                     //update term
                                     $edge_name->set('field_source', $source_term_id);
                                 }
+                                echo $article->field_url.PHP_EOL;
                                 $edge_name->set('field_url', $article->field_url);
                                 //Image
                                     //image file_name
