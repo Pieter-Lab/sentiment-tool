@@ -77,12 +77,6 @@ class TonnerCommands extends DrushCommands {
         $this->import('za','South Africa');
 
         echo '************************* '.date('y-m-d h:i:s a',time()).': News Import Process Has Ended.*************************'.PHP_EOL;
-        // the message
-        $msg = "Sentiment Tool Import News has finished running ".date('m-d-Y h:i:s',time());
-        // use wordwrap() if lines are longer than 70 characters
-        $msg = wordwrap($msg,70);
-        // send email
-        mail("pieter@lab.co.uk","Sentiment Tool Import",$msg);
     }
 
     /**
