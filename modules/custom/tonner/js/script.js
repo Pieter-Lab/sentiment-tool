@@ -76,7 +76,7 @@
         var data = google.visualization.arrayToDataTable(chartData);
         //set titles
         var options = {
-          title: 'Tone Performance over '+drupalSettings.total_headlines+' headlines',
+          title: 'Tone Performance over '+drupalSettings.total_headlines+' headlines over the last 5 days.',
           curveType: 'function',
           legend: { position: 'right' }
         };
@@ -101,7 +101,7 @@
         var data = google.visualization.arrayToDataTable(chartData);
         //set the title
         var options = {
-          title: 'Tones Percentages for all '+drupalSettings.total_headlines+' News Headlines'
+          title: 'Tones Percentages for all '+drupalSettings.total_headlines+' News Headlines over the last 5 days.'
         };
         //draw chart on element
         var chart = new google.visualization.PieChart(document.getElementById('totalpiechart'));
@@ -131,7 +131,7 @@
         var data = google.visualization.arrayToDataTable(chartData);
 
         var options = {
-          title : 'Tracking Anger across '+drupalSettings.total_headlines+' headlines',
+          title : 'Tracking Anger across '+drupalSettings.total_headlines+' headlines over the last 5 days.',
           vAxis: {title: 'Tone Intensity'},
           hAxis: {title: 'date'},
           seriesType: 'bars',
