@@ -46,7 +46,7 @@ class TonnerCommands extends DrushCommands {
       $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
       //Loop Countries
       foreach($terms as $country){
-        $c = \Drupal\taxonomy\Entity\Term::load($country->getId());
+        $c = \Drupal\taxonomy\Entity\Term::load($country->Id());
         echo $c->getName().PHP_EOL;
       }
 
