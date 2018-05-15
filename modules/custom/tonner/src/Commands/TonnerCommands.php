@@ -183,8 +183,8 @@ class TonnerCommands extends DrushCommands {
             //transform to array
             $newsArr = json_decode($data);
             if($newsArr->totalResults > 20){
-              $this->printer($newsArr);
-              exit("Bullocks!!");
+//              $this->printer($newsArr);
+//              exit("Bullocks!!");
             }
             //Test that we have data
             if($newsArr->status==="ok"){
