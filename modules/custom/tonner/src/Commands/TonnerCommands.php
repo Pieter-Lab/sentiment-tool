@@ -177,6 +177,7 @@ class TonnerCommands extends DrushCommands {
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $data = curl_exec($ch);
+            $this->printer($data);
             curl_close($ch);
             //----------------------------------------------------------------------------------------------------------------------
             //transform to array
