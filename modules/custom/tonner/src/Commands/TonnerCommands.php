@@ -22,8 +22,8 @@ class TonnerCommands extends DrushCommands {
     //IBM WATSON KEYS
     private $prefix = "########:";
     private $suffix = " :########".PHP_EOL;
-    public $username = '497762ee-4aa8-4f67-b64b-f81adfcb0e28';
-    public $password = 'Io5q2s8XMz2O';
+    public $username = '0fd8df5b-e6c2-479a-b7f0-6e7d25de03d5';
+    public $password = 'j3Hyc0I5CK13';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
     private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
     private $import_countries = [
