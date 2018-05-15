@@ -3,6 +3,6 @@ tonner.statistics_controller_show:
   path: '/tonner/statistics/show'
   defaults:
     _controller: '\Drupal\tonner\Controller\statisticsController::show'
-    _title: 'Tone Statistics'
+    _title: 'Sentiment Analysis of News Headlines'
   requirements:
     _permission: 'access content'
