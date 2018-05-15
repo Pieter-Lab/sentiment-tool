@@ -35,7 +35,7 @@ class statistics extends BlockBase {
                 ->condition('type', 'news_headline')
                 ->condition('field_tone',$tone['tid'],'=')
                 ->condition('field_publishedat',strtotime('-1 day'),'>=')
-                ->sort('title')
+                ->sort('field_publishedat')
                 ->range(0,1000)
                 ->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
