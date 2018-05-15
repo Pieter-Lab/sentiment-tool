@@ -36,7 +36,7 @@ class statistics extends BlockBase {
                 ->condition('field_tone',$tone['tid'],'=')
                 ->condition('field_publishedat',strtotime('-3 day'),'>=')
                 ->sort('field_publishedat')
-                ->range(0,3000)
+                ->range(0,2000)
                 ->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
             //Loop for historical
