@@ -170,7 +170,7 @@ class TonnerCommands extends DrushCommands {
             # An HTTP GET request example
             //Api headlines endpoint
 //            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=451ed6d47caf4d52b8e867b97a2f76ee';//Reuters
-            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=aedffb3d6d2241e8a81d701692e34680';//NewsOrg
+            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=aedffb3d6d2241e8a81d701692e34680&pageSize=50';//NewsOrg
             $country_name = $country_title;
             //----------------------------------------------------------------------------------------------------------------------
             $ch = curl_init($url);
@@ -182,8 +182,10 @@ class TonnerCommands extends DrushCommands {
             //----------------------------------------------------------------------------------------------------------------------
             //transform to array
             $newsArr = json_decode($data);
-            $this->printer($newsArr);
-            exit("Bullocks!!");
+            if($newsArr->totalResults > 20){
+              $this->printer($newsArr);
+              exit("Bullocks!!");
+            }
             //Test that we have data
             if($newsArr->status==="ok"){
                 //Talk
