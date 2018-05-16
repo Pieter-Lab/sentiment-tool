@@ -1,5 +1,5 @@
 <?php
-
+ini_set('memory_limit', '5000M');
 /**
  * @file
  * The PHP page that serves all page requests on a Drupal installation.
