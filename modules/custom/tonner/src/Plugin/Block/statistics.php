@@ -118,7 +118,9 @@ class statistics extends BlockBase {
             ],
             '#cache' => array('max-age' => 0)
         ];
-
+        if(isset($this->searchSentiment) && !empty($this->searchSentiment)){
+          $build['#attached']['drupalSettings']['searchSentiment'] = $this->searchSentiment;
+        }
         return $build;
     }
 
@@ -135,7 +137,7 @@ class statistics extends BlockBase {
         $query = \Drupal::entityQuery('taxonomy_term');
         $query->condition('vid', $vocabulary_name);
         //------------------------------------------------------------------
-        //Industry
+        //Sentiment
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
           if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='all'){
             //Entity qyery on taxonomy
@@ -152,6 +154,14 @@ class statistics extends BlockBase {
             $collect[$term->getName()] = [];
             $collect[$term->getName()]['tid'] = $term->id();
             $collect[$term->getName()]['name'] = $term->getName();
+          //Sentiment
+          if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+            if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='all'){
+              if($_SESSION['tonner']['sel_sentiment_tid']==$term->id())
+              //Entity qyery on taxonomy
+              $this->searchSentiment = $term->getName();
+            }
+          }
         }
         //return
         return $collect;
