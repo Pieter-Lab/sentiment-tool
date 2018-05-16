@@ -94,7 +94,7 @@ class graphsearchform extends FormBase {
     }
     //Add to select list
     $form['sentiment'] = [
-      '#type' => 'select',
+      '#type' => 'checkbox',
       '#title' => $this->t('Sentiment'),
       '#description' => $this->t('Select a Sentiment'),
       '#options' => $options,
