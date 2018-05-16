@@ -22,6 +22,7 @@ class graphsearchform extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    //Countries-----------------------------------------------------------------
     //Container
     $options = [];
     //Get the List of Countries
@@ -38,11 +39,32 @@ class graphsearchform extends FormBase {
     $form['countries'] = [
       '#type' => 'select',
       '#title' => $this->t('Countries'),
-      '#description' => $this->t('Select either Country'),
+      '#description' => $this->t('Select a Country'),
       '#options' => $options,
       '#weight' => '1',
     ];
-
+    //Industries-----------------------------------------------------------------
+    //Container
+    $options = [];
+    //Get the List of Terms
+    $query = \Drupal::entityQuery('taxonomy_term');
+    $query->condition('vid', "industry");
+    $tids = $query->execute();
+    $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    //Loop Terms
+    foreach($terms as $t) {
+      $Term = \Drupal\taxonomy\Entity\Term::load($t->Id());
+      $options[$t->Id()] = $Term->getName();
+    }
+    //Add to select list
+    $form['industries'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Industries'),
+      '#description' => $this->t('Select an Industry'),
+      '#options' => $options,
+      '#weight' => '1',
+    ];
+    //--------------------------------------------------------------------------
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
