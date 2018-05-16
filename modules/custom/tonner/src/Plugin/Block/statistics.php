@@ -38,7 +38,7 @@ class statistics extends BlockBase {
             //------------------------------------------------------------------
             //Country
             if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
+              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='all'){
                 $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
               }
             }
@@ -81,7 +81,7 @@ class statistics extends BlockBase {
             $result->condition('field_publishedat',strtotime(date('Y-m-d')),'>=');
             //Country
             if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
+              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='all'){
                 $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
               }
             }
