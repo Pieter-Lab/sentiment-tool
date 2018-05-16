@@ -34,7 +34,7 @@ class statistics extends BlockBase {
             $result = \Drupal::entityQuery('node');
             $result->condition('type', 'news_headline');
             $result->condition('field_tone',$tone['tid'],'=');
-            $result->condition('field_publishedat',strtotime('-1 day'),'>=');
+            $result->condition('field_publishedat',strtotime('-2 day'),'>=');
             //------------------------------------------------------------------
             //Country
             if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
@@ -42,13 +42,13 @@ class statistics extends BlockBase {
                 $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
               }
             }
-//            //------------------------------------------------------------------
-//            //Industry
-//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-//              if(!empty($_SESSION['tonner']['sel_industry_tid'])  && $_SESSION['tonner']['sel_industry_tid']!=='All'){
-//                $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
-//              }
-//            }
+            //------------------------------------------------------------------
+            //Industry
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_industry_tid'])  && $_SESSION['tonner']['sel_industry_tid']!=='all'){
+                $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
+              }
+            }
             //------------------------------------------------------------------
             $result->sort('field_publishedat');
             $result->range(0,2000);
@@ -83,6 +83,12 @@ class statistics extends BlockBase {
             if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
               if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='all'){
                 $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
+              }
+            }
+            //Industry
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_industry_tid'])  && $_SESSION['tonner']['sel_industry_tid']!=='all'){
+                $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
               }
             }
             $nres = $result->execute();
