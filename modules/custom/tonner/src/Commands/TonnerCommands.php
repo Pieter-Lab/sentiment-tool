@@ -22,8 +22,8 @@ class TonnerCommands extends DrushCommands {
     //IBM WATSON KEYS
     private $prefix = "########:";
     private $suffix = " :########".PHP_EOL;
-    public $username = '0fd8df5b-e6c2-479a-b7f0-6e7d25de03d5';
-    public $password = 'j3Hyc0I5CK13';
+    public $username = '358fc94f-f73b-4040-a47f-06a4f1a86b73';
+    public $password = 'GPHGYHk7u0V8';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
     private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
     private $import_countries = [
@@ -178,7 +178,7 @@ class TonnerCommands extends DrushCommands {
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $data = curl_exec($ch);
-            $this->printer($data);
+//            $this->printer($data);
             curl_close($ch);
             //----------------------------------------------------------------------------------------------------------------------
             //transform to array
