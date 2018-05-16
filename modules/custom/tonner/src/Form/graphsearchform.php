@@ -23,7 +23,7 @@ class graphsearchform extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['countries'] = [
-      '#type' => 'autocomplete_deluxe',
+      '#type' => 'select',
       '#title' => $this->t('Countries'),
       '#description' => $this->t('Select either Country'),
       '#value' => ['gb'=>'United Kingdom','us'=>'United States'],
