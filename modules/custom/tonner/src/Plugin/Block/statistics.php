@@ -115,7 +115,7 @@ class statistics extends BlockBase {
         $query->condition('vid', $vocabulary_name);
         //Conditional-------------------------------------------------------
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_sentiment_tid'])){
-          $query->condition('id', $_SESSION['tonner']['sel_sentiment_tid'], '=');
+          $query->condition('tid', $_SESSION['tonner']['sel_sentiment_tid'], '=');
         }
         $query->sort('name');
         $tids = $query->execute();
