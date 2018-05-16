@@ -108,13 +108,10 @@ class graphsearchform extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Collect
     $values = $form_state->getValues();
-//    $this->printer($values);
-//    exit("Nunchucks!!");
-    //Set in temp store
-        \Drupal::config('tonner.settings')->set('sel_country_tid', $values['countries'])->save();
-    //    \Drupal::config('tonner.settings')->set('sel_industry_tid', $values['industries'])->save();
-    //    \Drupal::config('tonner.settings')->set('sel_sentiment_tid', $values['sentiment'])->save();
-
+    $_SESSION['tonner'] = [];
+    $_SESSION['tonner']['sel_country_tid'] = $values['countries'];
+    $_SESSION['tonner']['sel_industry_tid'] = $values['industries'];
+    $_SESSION['tonner']['sel_sentiment_tid'] = $values['sentiment'];
   }
   /**
    * Prints out variables
