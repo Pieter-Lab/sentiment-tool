@@ -74,6 +74,7 @@ class statistics extends BlockBase {
         //Send to Template
         $build = [
             '#theme' => 'tonner',
+            '#searchform' => \Drupal::formBuilder()->getForm('Drupal\tonner\Form\graphsearchform'),
             '#tonescollect' => $tones,
             '#total_headlines' => $headlineTotal,
             '#attached' => [
