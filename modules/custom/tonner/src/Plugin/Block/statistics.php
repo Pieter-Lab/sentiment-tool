@@ -37,8 +37,9 @@ class statistics extends BlockBase {
             $result->condition('field_publishedat',strtotime('-1 day'),'>=');
             $result->sort('field_publishedat');
             $result->range(0,2000);
-            $result->execute();
-            $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
+            $res = $result->execute();
+            $nodes = \Drupal\Node\Entity\Node::loadMultiple($res);
+//            $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
             //Loop for historical
             foreach($nodes as $node){
                 //Test
