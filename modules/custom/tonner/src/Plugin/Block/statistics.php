@@ -36,12 +36,12 @@ class statistics extends BlockBase {
                 ->condition('field_tone',$tone['tid'],'=')
                 ->condition('field_publishedat',strtotime('-1 day'),'>=');
             //Conditional-------------------------------------------------------
-            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_country_tid'])){
-              $result->condition('field_country', $_SESSION['tonner']['sel_country_tid'], '=');
-            }
-            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_industry_tid'])){
-              $result->condition('field_article_industry', $_SESSION['tonner']['sel_industry_tid'], '=');
-            }
+//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_country_tid'])){
+//              $result->condition('field_country', $_SESSION['tonner']['sel_country_tid'], '=');
+//            }
+//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_industry_tid'])){
+//              $result->condition('field_article_industry', $_SESSION['tonner']['sel_industry_tid'], '=');
+//            }
             //------------------------------------------------------------------
             $result->sort('field_publishedat')
                 ->range(0,2000)
@@ -114,9 +114,9 @@ class statistics extends BlockBase {
         $query = \Drupal::entityQuery('taxonomy_term');
         $query->condition('vid', $vocabulary_name);
         //Conditional-------------------------------------------------------
-        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_sentiment_tid'])){
-          $query->condition('tid', $_SESSION['tonner']['sel_sentiment_tid'], '=');
-        }
+//        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_sentiment_tid'])){
+//          $query->condition('tid', $_SESSION['tonner']['sel_sentiment_tid'], '=');
+//        }
         $query->sort('name');
         $tids = $query->execute();
         //Load Terms
