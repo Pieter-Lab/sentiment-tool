@@ -22,21 +22,17 @@ class graphsearchform extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['country'] = [
-      '#type' => 'Country',
-      '#title' => $this->t('Country'),
-      '#description' => $this->t('Select Country'),
-      '#weight' => '0',
-    ];
     $form['countries'] = [
       '#type' => 'autocomplete_deluxe',
       '#title' => $this->t('Countries'),
       '#description' => $this->t('Select either Country'),
+      '#value' => ['gb'=>'United Kingdom','us'=>'United States'],
       '#weight' => '1',
     ];
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
+      '#weight' => '2',
     ];
 
     return $form;
