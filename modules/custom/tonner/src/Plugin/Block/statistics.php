@@ -103,7 +103,8 @@ class statistics extends BlockBase {
                     'current_total_headlines' => $currentHeadlineTotal,
                     'historialdata' => $histCollect
                 ]
-            ]
+            ],
+            '#cache' => '0'
         ];
 
         return $build;
@@ -121,10 +122,14 @@ class statistics extends BlockBase {
         //Entity qyery on taxonomy
         $query = \Drupal::entityQuery('taxonomy_term');
         $query->condition('vid', $vocabulary_name);
-        //Conditional-------------------------------------------------------
-//        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_sentiment_tid'])){
-//          $query->condition('tid', $_SESSION['tonner']['sel_sentiment_tid'], '=');
-//        }
+        //------------------------------------------------------------------
+        //Industry
+        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
+            $query>condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
+          }
+        }
+        //------------------------------------------------------------------
         $query->sort('name');
         $tids = $query->execute();
         //Load Terms
