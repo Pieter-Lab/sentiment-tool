@@ -143,10 +143,16 @@ class statistics extends BlockBase {
             //Entity qyery on taxonomy
             $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
 //            exit();
+            $and_condition_1 = $query->orConditionGroup();
+            $count = 0;
             foreach($_SESSION['tonner']['sel_sentiment_tid'] as $k => $v){
               if($k!=="all"){
-                $query->condition('tid',$k,'=');
+                $count++;
+                $and_condition_1->condition('tid',$k,'=');
               }
+            }
+            if($count>0){
+              $query->condition($and_condition_1);
             }
           }
         }
