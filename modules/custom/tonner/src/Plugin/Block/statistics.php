@@ -119,7 +119,7 @@ class statistics extends BlockBase {
             '#cache' => array('max-age' => 0)
         ];
         if(isset($this->searchSentiment) && !empty($this->searchSentiment)){
-          $build['#attached']['drupalSettings']['searchSentiment'] = $this->searchSentiment;
+          $build['#attached']['drupalSettings']['searchSentiment'] = ucfirst($this->searchSentiment);
         }
         return $build;
     }

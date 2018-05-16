@@ -81,7 +81,7 @@
           legend: { position: 'right' }
         };
         if(typeof drupalSettings.searchSentiment !== "undefined"){
-          options.title =  drupalSettings.searchSentiment+' tone Performance over '+drupalSettings.total_headlines+' headlines over the last 3 days.';
+          options.title =  drupalSettings.searchSentiment+' performance over '+drupalSettings.total_headlines+' headlines over the last 3 days.';
         }
         //set chart
         var curve_chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
