@@ -34,16 +34,8 @@ class statistics extends BlockBase {
             $result = \Drupal::entityQuery('node')
                 ->condition('type', 'news_headline')
                 ->condition('field_tone',$tone['tid'],'=')
-                ->condition('field_publishedat',strtotime('-1 day'),'>=');
-            //Conditional-------------------------------------------------------
-//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_country_tid'])){
-//              $result->condition('field_country', $_SESSION['tonner']['sel_country_tid'], '=');
-//            }
-//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner']) && isset($_SESSION['tonner']['sel_industry_tid'])){
-//              $result->condition('field_article_industry', $_SESSION['tonner']['sel_industry_tid'], '=');
-//            }
-            //------------------------------------------------------------------
-            $result->sort('field_publishedat')
+                ->condition('field_publishedat',strtotime('-1 day'),'>=')
+                ->sort('field_publishedat')
                 ->range(0,2000)
                 ->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
