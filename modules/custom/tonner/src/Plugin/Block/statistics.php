@@ -22,7 +22,7 @@ class statistics extends BlockBase {
      */
     public function build() {
         //Get any form values
-        $selected_country = \Drupal::config('tonner.settings')->get('sel_country_tid');
+//        $selected_country = \Drupal::config('tonner.settings')->get('sel_country_tid');
         //Get all the Available taxonomy Tones
         $tones = $this->getTones();
         //Total COunt
