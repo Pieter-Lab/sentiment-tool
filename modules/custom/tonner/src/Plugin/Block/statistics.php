@@ -21,6 +21,8 @@ class statistics extends BlockBase {
      * {@inheritdoc}
      */
     public function build() {
+        //Get any form values
+        $selected_country = \Drupal::config('tonner.settings')->get('sel_country_tid');
         //Get all the Available taxonomy Tones
         $tones = $this->getTones();
         //Total COunt
@@ -34,8 +36,10 @@ class statistics extends BlockBase {
             $result = \Drupal::entityQuery('node')
                 ->condition('type', 'news_headline')
                 ->condition('field_tone',$tone['tid'],'=')
-                ->condition('field_publishedat',strtotime('-1 day'),'>=')
-                ->sort('field_publishedat')
+                ->condition('field_publishedat',strtotime('-1 day'),'>=');
+            //Form submitted values
+
+            $result->sort('field_publishedat')
                 ->range(0,2000)
                 ->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);

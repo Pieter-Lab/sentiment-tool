@@ -106,13 +106,12 @@ class graphsearchform extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Display result.
-    $this->printer($form_state->getValues());
-    exit("Peter Testing!");
-//    foreach ($form_state->getValues() as $key => $value) {
-//      drupal_set_message($key . ': ' . $value);
-//    }
-
+    // Collect
+    $values = $form_state->getValues();
+    //Set in temp store
+    \Drupal::config('tonner.settings')->set('sel_country_tid', $values['countries'])->save();
+    \Drupal::config('tonner.settings')->set('sel_industry_tid', $values['industries'])->save();
+    \Drupal::config('tonner.settings')->set('sel_sentiment_tid', $values['sentiment'])->save();
   }
   /**
    * Prints out variables
