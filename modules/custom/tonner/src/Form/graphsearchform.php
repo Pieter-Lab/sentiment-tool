@@ -48,7 +48,7 @@ class graphsearchform extends FormBase {
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
       if(!empty($_SESSION['tonner']['sel_country_tid']) && $_SESSION['tonner']['sel_country_tid']==='All'){
-        $form['countries']['#default_value'] = $_SESSION['tonner']['sel_country_tid'];
+        $form['countries']['#default_value'] = $options[$_SESSION['tonner']['sel_country_tid']];
       }
     }
     //Industries-----------------------------------------------------------------
