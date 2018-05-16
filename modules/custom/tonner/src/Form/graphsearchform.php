@@ -23,6 +23,9 @@ class graphsearchform extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     //Countries-----------------------------------------------------------------
+    $this->printer($_SESSION['tonner']['sel_country_tid']);
+    $this->printer($_SESSION['tonner']['sel_industry_tid']);
+    $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
     //Container
     $options = ['all'=>'All'];
     //Get the List of Countries
@@ -45,7 +48,6 @@ class graphsearchform extends FormBase {
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
       if(!empty($_SESSION['tonner']['sel_country_tid']) && $_SESSION['tonner']['sel_country_tid']==='All'){
-        $this->printer($_SESSION['tonner']['sel_country_tid']);
         $form['countries']['#default_value'] = $_SESSION['tonner']['sel_country_tid'];
       }
     }
