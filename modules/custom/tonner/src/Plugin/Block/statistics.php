@@ -136,16 +136,12 @@ class statistics extends BlockBase {
         $query->condition('vid', $vocabulary_name);
         //------------------------------------------------------------------
         //Industry
-//        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-//          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='All'){
-//            //Entity qyery on taxonomy
-//            $query = \Drupal::entityQuery('taxonomy_term');
-//            $query->condition('vid', $vocabulary_name);
-//            $query->condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
-//            $query->sort('name');
-//            $tids = $query->execute();
-//          }
-//        }
+        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='all'){
+            //Entity qyery on taxonomy
+            $query->condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
+          }
+        }
         //------------------------------------------------------------------
         $query->sort('name');
         $tids = $query->execute();
