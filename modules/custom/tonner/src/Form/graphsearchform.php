@@ -24,7 +24,7 @@ class graphsearchform extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     //Countries-----------------------------------------------------------------
     //Container
-    $options = [];
+    $options = ['all'=>'All'];
     //Get the List of Countries
     $query = \Drupal::entityQuery('taxonomy_term');
     $query->condition('vid', "country");
@@ -44,13 +44,13 @@ class graphsearchform extends FormBase {
       '#weight' => '1',
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-      if(!empty($_SESSION['tonner']['sel_country_tid'])){
+      if(!empty($_SESSION['tonner']['sel_country_tid']) && $_SESSION['tonner']['sel_country_tid']==='All'){
         $form['countries']['#default_value'] = $_SESSION['tonner']['sel_country_tid'];
       }
     }
     //Industries-----------------------------------------------------------------
     //Container
-    $options = [];
+    $options = ['all'=>'All'];
     //Get the List of Terms
     $query = \Drupal::entityQuery('taxonomy_term');
     $query->condition('vid', "industry");
@@ -70,13 +70,13 @@ class graphsearchform extends FormBase {
       '#weight' => '1',
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-      if(!empty($_SESSION['tonner']['sel_industry_tid'])){
+      if(!empty($_SESSION['tonner']['sel_industry_tid']) && $_SESSION['tonner']['sel_industry_tid']==='All'){
         $form['industries']['#default_value'] = $_SESSION['tonner']['sel_industry_tid'];
       }
     }
     //Sentiment-----------------------------------------------------------------
     //Container
-    $options = [];
+    $options = ['all'=>'All'];
     //Get the List of Terms
     $query = \Drupal::entityQuery('taxonomy_term');
     $query->condition('vid', "tones");
@@ -96,7 +96,7 @@ class graphsearchform extends FormBase {
       '#weight' => '1',
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-      if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
+      if(!empty($_SESSION['tonner']['sel_sentiment_tid']) && $_SESSION['tonner']['sel_sentiment_tid']==='All'){
         $form['sentiment']['#default_value'] = $_SESSION['tonner']['sel_sentiment_tid'];
       }
     }
