@@ -38,14 +38,14 @@ class statistics extends BlockBase {
             //------------------------------------------------------------------
             //Country
             if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']==='All'){
+              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
                 $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
               }
             }
             //------------------------------------------------------------------
             //Industry
             if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-              if(!empty($_SESSION['tonner']['sel_industry_tid'])  && $_SESSION['tonner']['sel_industry_tid']==='All'){
+              if(!empty($_SESSION['tonner']['sel_industry_tid'])  && $_SESSION['tonner']['sel_industry_tid']!=='All'){
                 $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
               }
             }
@@ -122,7 +122,7 @@ class statistics extends BlockBase {
         //------------------------------------------------------------------
         //Industry
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']==='All'){
+          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='All'){
             //Entity qyery on taxonomy
             $query = \Drupal::entityQuery('taxonomy_term');
             $query->condition('vid', $vocabulary_name);
