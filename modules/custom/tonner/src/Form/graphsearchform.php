@@ -43,6 +43,11 @@ class graphsearchform extends FormBase {
       '#options' => $options,
       '#weight' => '1',
     ];
+    if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+      if(!empty($_SESSION['tonner']['sel_country_tid'])){
+        $form['countries']['#default'] = [$_SESSION['tonner']['sel_country_tid']=>$options[$_SESSION['tonner']['sel_country_tid']]];
+      }
+    }
     //Industries-----------------------------------------------------------------
     //Container
     $options = [];
@@ -64,6 +69,11 @@ class graphsearchform extends FormBase {
       '#options' => $options,
       '#weight' => '1',
     ];
+    if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+      if(!empty($_SESSION['tonner']['sel_industry_tid'])){
+        $form['industries']['#default'] = [$_SESSION['tonner']['sel_industry_tid']=>$options[$_SESSION['tonner']['sel_industry_tid']]];
+      }
+    }
     //Sentiment-----------------------------------------------------------------
     //Container
     $options = [];
@@ -85,6 +95,11 @@ class graphsearchform extends FormBase {
       '#options' => $options,
       '#weight' => '1',
     ];
+    if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+      if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
+        $form['sentiment']['#default'] = [$_SESSION['tonner']['sel_sentiment_tid']=>$options[$_SESSION['tonner']['sel_sentiment_tid']]];
+      }
+    }
     //--------------------------------------------------------------------------
     $form['submit'] = [
       '#type' => 'submit',
