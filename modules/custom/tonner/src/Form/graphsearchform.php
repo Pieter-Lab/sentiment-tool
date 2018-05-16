@@ -45,10 +45,12 @@ class graphsearchform extends FormBase {
       '#description' => $this->t('Select a Country'),
       '#options' => $options,
       '#weight' => '1',
+      '#cache' => array('max-age' => 0)
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
       if(!empty($_SESSION['tonner']['sel_country_tid']) && $_SESSION['tonner']['sel_country_tid']==='All'){
         $form['countries']['#value'] = [$_SESSION['tonner']['sel_country_tid']=>$options[$_SESSION['tonner']['sel_country_tid']]];
+        $form['countries']['#default_value'] = [$_SESSION['tonner']['sel_country_tid']=>$options[$_SESSION['tonner']['sel_country_tid']]];
       }
     }
     //Industries-----------------------------------------------------------------
