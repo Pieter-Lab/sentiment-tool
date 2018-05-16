@@ -119,19 +119,26 @@ class statistics extends BlockBase {
         $collect = [];
         //Vocab
         $vocabulary_name = 'tones'; //name of your vocabulary
-        //Entity qyery on taxonomy
-        $query = \Drupal::entityQuery('taxonomy_term');
-        $query->condition('vid', $vocabulary_name);
         //------------------------------------------------------------------
         //Industry
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
           if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
-            $query>condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
+            //Entity qyery on taxonomy
+            $query = \Drupal::entityQuery('taxonomy_term');
+            $query->condition('vid', $vocabulary_name);
+            $query->condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
+            $query->sort('name');
+            $tids = $query->execute();
           }
+        }else{
+          //Entity qyery on taxonomy
+          $query = \Drupal::entityQuery('taxonomy_term');
+          $query->condition('vid', $vocabulary_name);
+          $query->sort('name');
+          $tids = $query->execute();
         }
         //------------------------------------------------------------------
-        $query->sort('name');
-        $tids = $query->execute();
+
         //Load Terms
         $terms = Term::loadMultiple($tids);
         foreach($terms as $term) {
