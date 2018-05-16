@@ -141,7 +141,7 @@ class statistics extends BlockBase {
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
           if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
             //Entity qyery on taxonomy
-            $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
+//            $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
 //            exit();
             $and_condition_1 = $query->orConditionGroup();
             $count = 0;
@@ -159,7 +159,7 @@ class statistics extends BlockBase {
         //------------------------------------------------------------------
         $query->sort('name');
         $tids = $query->execute();
-        $this->printer($tids);
+//        $this->printer($tids);
         //Load Terms
         $terms = Term::loadMultiple($tids);
         foreach($terms as $term) {
