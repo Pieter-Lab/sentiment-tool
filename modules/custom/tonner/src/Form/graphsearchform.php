@@ -107,10 +107,28 @@ class graphsearchform extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Display result.
+    $this->printer($form_state->sentiment->getValue());
+    exit("Peter Testing!");
 //    foreach ($form_state->getValues() as $key => $value) {
 //      drupal_set_message($key . ': ' . $value);
 //    }
 
   }
+  /**
+   * Prints out variables
+   */
+  public function printer($val)
+  {
+    if (is_array($val) || is_object($val)) {
+      echo '<pre>';
+      print_r($val);
+      echo '</pre>';
+    } else {
+      echo '<br />';
+      var_dump($val);
+      echo '<br />';
+    }
+  }
+
 
 }
