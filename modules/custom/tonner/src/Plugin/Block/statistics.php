@@ -141,6 +141,8 @@ class statistics extends BlockBase {
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
           if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='all'){
             //Entity qyery on taxonomy
+            $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
+            exit();
             $query->condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
           }
         }
