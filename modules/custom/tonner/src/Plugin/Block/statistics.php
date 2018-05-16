@@ -37,11 +37,11 @@ class statistics extends BlockBase {
             $result->condition('field_publishedat',strtotime('-1 day'),'>=');
             //------------------------------------------------------------------
             //Country
-//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-//              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
-//                $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
-//              }
-//            }
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
+                $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
+              }
+            }
 //            //------------------------------------------------------------------
 //            //Industry
 //            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
@@ -75,12 +75,18 @@ class statistics extends BlockBase {
             $tones[$key]['total_headline_count'] = count($nodes);
             $headlineTotal = $headlineTotal + count($nodes);
             //Load the nodes by tone and restrict to today
-            $result = \Drupal::entityQuery('node')
-                ->condition('type', 'news_headline')
-                ->condition('field_tone',$tone['tid'],'=')
-                ->condition('field_publishedat',strtotime(date('Y-m-d')),'>=')
-                ->execute();
-            $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
+            $result = \Drupal::entityQuery('node');
+            $result->condition('type', 'news_headline');
+            $result->condition('field_tone',$tone['tid'],'=');
+            $result->condition('field_publishedat',strtotime(date('Y-m-d')),'>=');
+            //Country
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
+                $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
+              }
+            }
+            $nres = $result->execute();
+            $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nres);
             //set the current count
             $tones[$key]['current_headline_count'] = count($nodes);
             $currentHeadlineTotal = $currentHeadlineTotal + count($nodes);
