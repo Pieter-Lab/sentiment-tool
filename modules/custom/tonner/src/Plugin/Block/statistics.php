@@ -31,13 +31,13 @@ class statistics extends BlockBase {
         //Loop through Tones to get the ALL COUNT!
         foreach($tones as $key => $tone){
             //entity query using storage manager
-            $result = \Drupal::entityQuery('node')
-                ->condition('type', 'news_headline')
-                ->condition('field_tone',$tone['tid'],'=')
-                ->condition('field_publishedat',strtotime('-1 day'),'>=')
-                ->sort('field_publishedat')
-                ->range(0,2000)
-                ->execute();
+            $result = \Drupal::entityQuery('node');
+            $result->condition('type', 'news_headline');
+            $result->condition('field_tone',$tone['tid'],'=');
+            $result->condition('field_publishedat',strtotime('-1 day'),'>=');
+            $result->sort('field_publishedat');
+            $result->range(0,2000);
+            $result->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($result);
             //Loop for historical
             foreach($nodes as $node){
