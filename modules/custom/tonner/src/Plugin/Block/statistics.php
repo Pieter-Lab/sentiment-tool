@@ -35,6 +35,21 @@ class statistics extends BlockBase {
             $result->condition('type', 'news_headline');
             $result->condition('field_tone',$tone['tid'],'=');
             $result->condition('field_publishedat',strtotime('-1 day'),'>=');
+            //------------------------------------------------------------------
+            //Country
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_country_tid'])){
+                $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
+              }
+            }
+            //------------------------------------------------------------------
+            //Industry
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_industry_tid'])){
+                $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
+              }
+            }
+            //------------------------------------------------------------------
             $result->sort('field_publishedat');
             $result->range(0,2000);
             $res = $result->execute();
