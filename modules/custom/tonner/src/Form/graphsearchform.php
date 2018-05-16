@@ -109,11 +109,12 @@ class graphsearchform extends FormBase {
     // Collect
     $values = $form_state->getValues();
     $this->printer($values);
-    exit();
+    exit("Nunchucks!!");
     //Set in temp store
-//    \Drupal::config('tonner.settings')->set('sel_country_tid', $values['countries'])->save();
-//    \Drupal::config('tonner.settings')->set('sel_industry_tid', $values['industries'])->save();
-//    \Drupal::config('tonner.settings')->set('sel_sentiment_tid', $values['sentiment'])->save();
+    //    \Drupal::config('tonner.settings')->set('sel_country_tid', $values['countries'])->save();
+    //    \Drupal::config('tonner.settings')->set('sel_industry_tid', $values['industries'])->save();
+    //    \Drupal::config('tonner.settings')->set('sel_sentiment_tid', $values['sentiment'])->save();
+
   }
   /**
    * Prints out variables
