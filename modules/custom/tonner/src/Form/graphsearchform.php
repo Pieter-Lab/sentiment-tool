@@ -64,6 +64,27 @@ class graphsearchform extends FormBase {
       '#options' => $options,
       '#weight' => '1',
     ];
+    //Sentiment-----------------------------------------------------------------
+    //Container
+    $options = [];
+    //Get the List of Terms
+    $query = \Drupal::entityQuery('taxonomy_term');
+    $query->condition('vid', "tones");
+    $tids = $query->execute();
+    $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    //Loop Terms
+    foreach($terms as $t) {
+      $Term = \Drupal\taxonomy\Entity\Term::load($t->Id());
+      $options[$t->Id()] = $Term->getName();
+    }
+    //Add to select list
+    $form['sentiment'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Sentiment'),
+      '#description' => $this->t('Select a Sentiment'),
+      '#options' => $options,
+      '#weight' => '1',
+    ];
     //--------------------------------------------------------------------------
     $form['submit'] = [
       '#type' => 'submit',
@@ -86,9 +107,9 @@ class graphsearchform extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Display result.
-    foreach ($form_state->getValues() as $key => $value) {
-      drupal_set_message($key . ': ' . $value);
-    }
+//    foreach ($form_state->getValues() as $key => $value) {
+//      drupal_set_message($key . ': ' . $value);
+//    }
 
   }
 
