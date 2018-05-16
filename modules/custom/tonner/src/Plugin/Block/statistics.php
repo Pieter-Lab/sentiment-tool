@@ -139,16 +139,21 @@ class statistics extends BlockBase {
         //------------------------------------------------------------------
         //Sentiment
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='all'){
+          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
             //Entity qyery on taxonomy
-            $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
-            exit();
-            $query->condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
+//            $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
+//            exit();
+            foreach($_SESSION['tonner']['sel_sentiment_tid'] as $k => $v){
+              if($k!=="all"){
+                $query->condition('tid',$k,'=');
+              }
+            }
           }
         }
         //------------------------------------------------------------------
         $query->sort('name');
         $tids = $query->execute();
+        $this->printer($tids);
         //Load Terms
         $terms = Term::loadMultiple($tids);
         foreach($terms as $term) {
@@ -157,14 +162,15 @@ class statistics extends BlockBase {
             $collect[$term->getName()]['tid'] = $term->id();
             $collect[$term->getName()]['name'] = $term->getName();
           //Sentiment
-          if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-            if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='all'){
-              if($_SESSION['tonner']['sel_sentiment_tid']==$term->id())
-              //Entity qyery on taxonomy
-              $this->searchSentiment = $term->getName();
-            }
-          }
+//          if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+//            if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
+//              if($_SESSION['tonner']['sel_sentiment_tid']==$term->id())
+//              //Entity qyery on taxonomy
+//              $this->searchSentiment = $term->getName();
+//            }
+//          }
         }
+        exit();
         //return
         return $collect;
     }
