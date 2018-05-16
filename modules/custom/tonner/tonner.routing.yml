@@ -6,3 +6,12 @@ tonner.statistics_controller_show:
     _title: 'Sentiment Analysis of News Headlines'
   requirements:
     _permission: 'access content'
+
+tonner.graphsearchform:
+  path: '/tonner/form/graphsearchform'
+  defaults:
+    _form: '\Drupal\tonner\Form\graphsearchform'
+    _title: 'graphsearchform'
+  requirements:
+    _access: 'TRUE'
+  
