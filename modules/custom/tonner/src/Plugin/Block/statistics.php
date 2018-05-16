@@ -34,7 +34,7 @@ class statistics extends BlockBase {
             $result = \Drupal::entityQuery('node');
             $result->condition('type', 'news_headline');
             $result->condition('field_tone',$tone['tid'],'=');
-            $result->condition('field_publishedat',strtotime('-5 day'),'>=');
+            $result->condition('field_publishedat',strtotime('-14 day'),'>=');
             //------------------------------------------------------------------
             //Country
             if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
