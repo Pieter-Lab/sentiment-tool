@@ -34,21 +34,21 @@ class statistics extends BlockBase {
             $result = \Drupal::entityQuery('node');
             $result->condition('type', 'news_headline');
             $result->condition('field_tone',$tone['tid'],'=');
-            $result->condition('field_publishedat',strtotime('-1 day'),'>=');
+            $result->condition('field_publishedat',strtotime('-2 day'),'>=');
             //------------------------------------------------------------------
             //Country
-            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
-                $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
-              }
-            }
-            //------------------------------------------------------------------
-            //Industry
-            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-              if(!empty($_SESSION['tonner']['sel_industry_tid'])  && $_SESSION['tonner']['sel_industry_tid']!=='All'){
-                $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
-              }
-            }
+//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+//              if(!empty($_SESSION['tonner']['sel_country_tid'])  && $_SESSION['tonner']['sel_country_tid']!=='All'){
+//                $result->condition('field_country',$_SESSION['tonner']['sel_country_tid'],'=');
+//              }
+//            }
+//            //------------------------------------------------------------------
+//            //Industry
+//            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+//              if(!empty($_SESSION['tonner']['sel_industry_tid'])  && $_SESSION['tonner']['sel_industry_tid']!=='All'){
+//                $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
+//              }
+//            }
             //------------------------------------------------------------------
             $result->sort('field_publishedat');
             $result->range(0,2000);
@@ -119,26 +119,24 @@ class statistics extends BlockBase {
         $collect = [];
         //Vocab
         $vocabulary_name = 'tones'; //name of your vocabulary
+        //Entity qyery on taxonomy
+        $query = \Drupal::entityQuery('taxonomy_term');
+        $query->condition('vid', $vocabulary_name);
         //------------------------------------------------------------------
         //Industry
-        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='All'){
-            //Entity qyery on taxonomy
-            $query = \Drupal::entityQuery('taxonomy_term');
-            $query->condition('vid', $vocabulary_name);
-            $query->condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
-            $query->sort('name');
-            $tids = $query->execute();
-          }
-        }else{
-          //Entity qyery on taxonomy
-          $query = \Drupal::entityQuery('taxonomy_term');
-          $query->condition('vid', $vocabulary_name);
-          $query->sort('name');
-          $tids = $query->execute();
-        }
+//        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+//          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])  && $_SESSION['tonner']['sel_sentiment_tid']!=='All'){
+//            //Entity qyery on taxonomy
+//            $query = \Drupal::entityQuery('taxonomy_term');
+//            $query->condition('vid', $vocabulary_name);
+//            $query->condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
+//            $query->sort('name');
+//            $tids = $query->execute();
+//          }
+//        }
         //------------------------------------------------------------------
-
+        $query->sort('name');
+        $tids = $query->execute();
         //Load Terms
         $terms = Term::loadMultiple($tids);
         foreach($terms as $term) {
