@@ -124,11 +124,11 @@ class statistics extends BlockBase {
         $query->condition('vid', $vocabulary_name);
         //------------------------------------------------------------------
         //Industry
-//        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-//          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
-//            $query>condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
-//          }
-//        }
+        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+          if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
+            $query>condition('tid',$_SESSION['tonner']['sel_sentiment_tid'],'=');
+          }
+        }
         //------------------------------------------------------------------
         $query->sort('name');
         $tids = $query->execute();
