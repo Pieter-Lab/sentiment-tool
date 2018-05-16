@@ -23,9 +23,9 @@ class graphsearchform extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     //Countries-----------------------------------------------------------------
-    $this->printer($_SESSION['tonner']['sel_country_tid']);
-    $this->printer($_SESSION['tonner']['sel_industry_tid']);
-    $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
+//    $this->printer($_SESSION['tonner']['sel_country_tid']);
+//    $this->printer($_SESSION['tonner']['sel_industry_tid']);
+//    $this->printer($_SESSION['tonner']['sel_sentiment_tid']);
     //Container
     $options = ['all'=>'All'];
     //Get the List of Countries
