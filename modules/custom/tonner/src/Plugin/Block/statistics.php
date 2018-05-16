@@ -104,7 +104,7 @@ class statistics extends BlockBase {
                     'historialdata' => $histCollect
                 ]
             ],
-            '#cache' => '0'
+            '#cache' => array('max-age' => 0)
         ];
 
         return $build;
