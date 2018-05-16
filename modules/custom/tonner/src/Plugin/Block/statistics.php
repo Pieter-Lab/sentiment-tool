@@ -35,12 +35,6 @@ class statistics extends BlockBase {
             $result->condition('type', 'news_headline');
             $result->condition('field_tone',$tone['tid'],'=');
             $result->condition('field_publishedat',strtotime('-1 day'),'>=');
-            //------------------------------------------------------------------
-            //Country
-            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-              
-            }
-            //------------------------------------------------------------------
             $result->sort('field_publishedat');
             $result->range(0,2000);
             $result->execute();
