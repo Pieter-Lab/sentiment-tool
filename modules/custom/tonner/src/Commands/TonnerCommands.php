@@ -58,8 +58,6 @@ class TonnerCommands extends DrushCommands {
       //Loop em
       foreach($nodes as $head){
         $headline = \Drupal\Node\Entity\Node::load($head->Id());
-        echo $headline->getTitle().PHP_EOL;
-        echo $headline->body->value.PHP_EOL;
         //Extract Language
         $context = stream_context_create(array(
           'http' => array(
