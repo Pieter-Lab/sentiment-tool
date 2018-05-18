@@ -22,8 +22,8 @@ class TonnerCommands extends DrushCommands {
     //IBM WATSON KEYS
     private $prefix = "########:";
     private $suffix = " :########".PHP_EOL;
-    public $username = 'b42d13fa-1ae8-47e0-aebb-6167763c7588';
-    public $password = 'Sy2Eapf8J1UM';
+    public $username = '24fdfb75-ea31-4559-a5b7-6a3fa91083f6';
+    public $password = 'XvKsnygUzTog';
     public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
     private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
     private $import_countries = [
@@ -169,8 +169,8 @@ class TonnerCommands extends DrushCommands {
         //--------------------------------------------------------------------------------------------------------------
             # An HTTP GET request example
             //Api headlines endpoint
-            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=451ed6d47caf4d52b8e867b97a2f76ee';//Reuters
-//            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=aedffb3d6d2241e8a81d701692e34680&pageSize=50';//NewsOrg
+//            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=451ed6d47caf4d52b8e867b97a2f76ee';//Reuters
+            $url = 'https://newsapi.org/v2/top-headlines?country='.$counrty_code.'&category='.$industry.'&apiKey=aedffb3d6d2241e8a81d701692e34680&pageSize=50';//NewsOrg
             $country_name = $country_title;
             //----------------------------------------------------------------------------------------------------------------------
             $ch = curl_init($url);
