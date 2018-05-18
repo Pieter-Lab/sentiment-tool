@@ -21,6 +21,8 @@ class statistics extends BlockBase {
      * {@inheritdoc}
      */
     public function build() {
+        //Collect Tags for tag CLoud
+        $tags = "";
         //Get all the Available taxonomy Tones
         $tones = $this->getTones();
         //Total COunt
@@ -98,6 +100,14 @@ class statistics extends BlockBase {
                 $result->condition('field_article_industry',$_SESSION['tonner']['sel_industry_tid'],'=');
               }
             }
+            //------------------------------------------------------------------
+            //Topics
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_tag_tid'])  && $_SESSION['tonner']['sel_tag_tid']!=='all'){
+                $result->condition('field_topics',$_SESSION['tonner']['sel_tag_tid'],'=');
+              }
+            }
+            //------------------------------------------------------------------
             $nres = $result->execute();
             $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nres);
             //set the current count
