@@ -50,6 +50,13 @@ class statistics extends BlockBase {
               }
             }
             //------------------------------------------------------------------
+            //Topics
+            if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+              if(!empty($_SESSION['tonner']['sel_tag_tid'])  && $_SESSION['tonner']['sel_tag_tid']!=='all'){
+                $result->condition('field_topics',$_SESSION['tonner']['sel_tag_tid'],'=');
+              }
+            }
+            //------------------------------------------------------------------
             $result->sort('field_publishedat');
             $result->range(0,2000);
             $res = $result->execute();
@@ -160,6 +167,19 @@ class statistics extends BlockBase {
                 $toneTerm = \Drupal\taxonomy\Entity\Term::load($tone->Id());
                 $headline .= $toneTerm->getName().' : ';
               }
+            }
+          }
+          if(isset($_SESSION['tonner']['sel_tag_tid']) && !empty($_SESSION['tonner']['sel_tag_tid'])){
+            //Get All the Terms in the Tones Vocab
+            $query = \Drupal::entityQuery('taxonomy_term');
+            $query->condition('vid', "tags");
+            $query->condition('tid', $_SESSION['tonner']['sel_tag_tid'],"=");
+            $tids = $query->execute();
+            $industryTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+            foreach($industryTerms as $industry) {
+              //load term
+              $industryTerm = \Drupal\taxonomy\Entity\Term::load($industry->Id());
+              $headline .= $industryTerm->getName().' : ';
             }
           }
           //Check if Headlines was created
