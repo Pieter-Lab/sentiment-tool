@@ -67,7 +67,7 @@ class TonnerCommands extends DrushCommands {
           )
         ));
         //call
-        $data = file_get_contents($this->NLurl.'&text='.urlencode($headline->body->value), false, $context);
+        $data = file_get_contents($this->NLurl.'&text='.urlencode($headline->getTitle()), false, $context);
         //Convert to JSON
         $json = json_decode($data);
         //Test
