@@ -119,7 +119,7 @@ class graphsearchform extends FormBase {
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
-      '#weight' => '2',
+      '#weight' => '4',
     ];
 
     return $form;

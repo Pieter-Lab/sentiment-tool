@@ -94,8 +94,8 @@ class TonnerCommands extends DrushCommands {
           //Talk
           echo $this->prefix.'/ Article "'.substr($headline->getTitle(), 0, 10).'" Has Tags "'.$txt.'" /'.$this->suffix;
         }else{
-//          $this->printer($json);
-//          exit("ISSSSUE!!!!");
+          //Talk
+          echo $this->prefix.'/ Article "'.substr($headline->getTitle(), 0, 10).'" NO TAGS! /'.$this->suffix;
         }
       }
     //Talk
