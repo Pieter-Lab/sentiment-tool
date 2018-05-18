@@ -27,7 +27,7 @@ class TonnerCommands extends DrushCommands {
   public $password = 'XvKsnygUzTog';
   public $NLpassword = '5MMIqnqWLML0';
   public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
-  public $NLurl = 'https://gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27';
+  public $NLurl = 'https://gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&features=sentiment,keywords';
   private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
   private $import_countries = [
     'gb'=>'United Kingdom',
