@@ -142,7 +142,7 @@ class statistics extends BlockBase {
                 ]
             ],
             '#cache' => array('max-age' => 0),
-            '#topicsCloud'=> implode(', ',$tagsTopics)
+            '#topicsCloud'=> substr(implode(', ',$tagsTopics), 0, 250)
         ];
         if(isset($this->searchSentiment) && !empty($this->searchSentiment)){
           $build['#attached']['drupalSettings']['searchSentiment'] = ucfirst($this->searchSentiment);
