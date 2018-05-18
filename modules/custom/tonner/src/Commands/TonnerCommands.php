@@ -54,7 +54,7 @@ class TonnerCommands extends DrushCommands {
       $nodes = \Drupal\Node\Entity\Node::loadMultiple($nids);
       //Loop em
       foreach($nodes as $head){
-        $headline = \Drupal\taxonomy\Entity\Term::load($head->Id());
+        $headline = \Drupal\Node\Entity\Node::load($head->Id());
         echo $headline->Id().PHP_EOL;
         echo $headline->getName().PHP_EOL;
       }
