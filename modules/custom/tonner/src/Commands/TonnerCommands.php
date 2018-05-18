@@ -91,7 +91,7 @@ class TonnerCommands extends DrushCommands {
           $headline->set('field_topics', $ton);
           $headline->save();
           //Talk
-          echo $this->prefix.' Article '.$headline->getTitle().' Has Tags "'.$txt.'" '.$this->suffix;
+          echo $this->prefix.'/ Article "'.substr($headline->getTitle(), 0, 10).'" Has Tags "'.$txt.'" /'.$this->suffix;
         }
       }
     //Talk
