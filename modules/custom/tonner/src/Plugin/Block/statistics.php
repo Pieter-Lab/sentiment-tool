@@ -125,28 +125,33 @@ class statistics extends BlockBase {
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
           //Headline
           $headline = false;
-          //Get All the Terms in the Countries Vocab
-          $query = \Drupal::entityQuery('taxonomy_term');
-          $query->condition('vid', "country");
-          $query->condition('tid', $_SESSION['tonner']['sel_country_tid'],"=");
-          $tids = $query->execute();
-          if($tids && !empty($tids)){
-            $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-            foreach($terms as $country) {
-              $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
-              $headline .= $countryTerm->getName().': ';
+          if(isset($_SESSION['tonner']['sel_country_tid']) && !empty($_SESSION['tonner']['sel_country_tid'])){
+            //Get All the Terms in the Countries Vocab
+            $query = \Drupal::entityQuery('taxonomy_term');
+            $query->condition('vid', "country");
+            $query->condition('tid', $_SESSION['tonner']['sel_country_tid'],"=");
+            $tids = $query->execute();
+            if($tids && !empty($tids)){
+              $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+              foreach($terms as $country) {
+                $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
+                $headline .= $countryTerm->getName().' : ';
+              }
             }
           }
-//          //Get All the Terms in the Tones Vocab
-//          $query = \Drupal::entityQuery('taxonomy_term');
-//          $query->condition('vid', "industry");
-//          $query->condition('tid', $_SESSION['tonner']['sel_industry_tid'],"=");
-//          $tids = $query->execute();
-//          $industryTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-//          foreach($industryTerms as $industry) {
-//            //load term
-//            $industryTerm = \Drupal\taxonomy\Entity\Term::load($industry->Id());
-//          }
+          if(isset($_SESSION['tonner']['sel_industry_tid']) && !empty($_SESSION['tonner']['sel_industry_tid'])){
+            //Get All the Terms in the Tones Vocab
+            $query = \Drupal::entityQuery('taxonomy_term');
+            $query->condition('vid', "industry");
+            $query->condition('tid', $_SESSION['tonner']['sel_industry_tid'],"=");
+            $tids = $query->execute();
+            $industryTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+            foreach($industryTerms as $industry) {
+              //load term
+              $industryTerm = \Drupal\taxonomy\Entity\Term::load($industry->Id());
+              $headline .= $industryTerm->getName().' : ';
+            }
+          }
 //          $toneTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($_SESSION['tonner']['sel_industry_tid']);
 //          $toneStr = "";
 //          foreach($toneTerms as $tone) {
@@ -154,7 +159,7 @@ class statistics extends BlockBase {
 //            $toneTerm = \Drupal\taxonomy\Entity\Term::load($tone->Id());
 //            $toneStr.= $toneTerm->getName().' ';
 //          }
-          $this->printer($countryTerm->getName());
+
 //          $this->printer($industryTerm->getName());
           $this->printer($headline);
 
