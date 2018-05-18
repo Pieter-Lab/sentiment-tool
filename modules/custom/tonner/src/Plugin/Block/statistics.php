@@ -83,7 +83,7 @@ class statistics extends BlockBase {
                 $tags = $node->field_topics->getValue();
                 if(!empty($tags)){
                   foreach($tags as $tag){
-                    $topic = \Drupal\taxonomy\Entity\Term::loadMultiple($tag['target_id']);
+                    $topic = \Drupal\taxonomy\Entity\Term::load($tag['target_id']);
                     $this->printer($topic->getName());
                   }
                 }
