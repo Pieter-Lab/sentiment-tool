@@ -23,8 +23,11 @@ class TonnerCommands extends DrushCommands {
   private $prefix = "########:";
   private $suffix = " :########".PHP_EOL;
   public $username = '24fdfb75-ea31-4559-a5b7-6a3fa91083f6';
+  public $NLusername = '3ce0c5f4-fc0b-4e3a-8f49-ad0e4d6cc948';
   public $password = 'XvKsnygUzTog';
+  public $NLpassword = '5MMIqnqWLML0';
   public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
+  public $NLurl = 'https://gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27';
   private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
   private $import_countries = [
     'gb'=>'United Kingdom',
@@ -57,6 +60,18 @@ class TonnerCommands extends DrushCommands {
         $headline = \Drupal\Node\Entity\Node::load($head->Id());
         echo $headline->getTitle().PHP_EOL;
         echo $headline->body->value.PHP_EOL;
+        //Extract Language
+        $context = stream_context_create(array(
+          'http' => array(
+            'header'  => "Authorization: Basic " . base64_encode($this->NLusername.":".$this->NLpassword)
+          )
+        ));
+        //call
+        $data = file_get_contents($this->NLurl.'&text='.urlencode($headline->getTitle()), false, $context);
+        //Convert to JSON
+        $json = json_decode($data);
+        $this->printer($json);
+        exit();
       }
     //Talk
     echo $this->prefix.' Nautral Language Noun Extraction has ended'.$this->suffix;
