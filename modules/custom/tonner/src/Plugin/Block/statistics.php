@@ -134,7 +134,7 @@ class statistics extends BlockBase {
             $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
             foreach($terms as $country) {
               $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
-              $headline .= $countryTerm.': ';
+              $headline .= $countryTerm->getName().': ';
             }
           }
 //          //Get All the Terms in the Tones Vocab
