@@ -22,7 +22,7 @@ class statistics extends BlockBase {
      */
     public function build() {
         //Collect Tags for tag CLoud
-        $tags = "";
+        $tagsTopics = [];
         //Get all the Available taxonomy Tones
         $tones = $this->getTones();
         //Total COunt
@@ -84,10 +84,9 @@ class statistics extends BlockBase {
                 if(!empty($tags)){
                   foreach($tags as $tag){
                     $topic = \Drupal\taxonomy\Entity\Term::load($tag['target_id']);
-                    $this->printer($topic->getName());
+                    $tagsTopics[$topic->getName()] = $topic->getName();
                   }
                 }
-                exit("Peter Testing!!!");
             }
             //set the count
             $tones[$key]['total_headline_count'] = count($nodes);
@@ -142,7 +141,8 @@ class statistics extends BlockBase {
                     'historialdata' => $histCollect
                 ]
             ],
-            '#cache' => array('max-age' => 0)
+            '#cache' => array('max-age' => 0),
+            '#topicsCloud'=> implode(', ',$tagsTopics)
         ];
         if(isset($this->searchSentiment) && !empty($this->searchSentiment)){
           $build['#attached']['drupalSettings']['searchSentiment'] = ucfirst($this->searchSentiment);
