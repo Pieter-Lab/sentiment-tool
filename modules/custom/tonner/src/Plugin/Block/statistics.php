@@ -80,7 +80,12 @@ class statistics extends BlockBase {
                 //Add
                 $histCollect[date('Y-m-d',$node->field_publishedat->value)][$tone['name']] = $histCollect[date('Y-m-d',$node->field_publishedat->value)][$tone['name']] + 1;
                 //Get tags
-                $this->printer($node->field_topics->getValue());
+                $tags = $node->field_topics->getValue();
+                if(!empty($tags)){
+                  foreach($tags as $tag){
+                    $this->printer($tag);
+                  }
+                }
                 exit("Peter Testing!!!");
             }
             //set the count
