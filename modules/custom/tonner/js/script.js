@@ -11,7 +11,7 @@
       //Pull in google packages
       google.charts.load('current', {'packages':['corechart']});
       //Current daily tones
-      google.charts.setOnLoadCallback(currentPieChart);
+      // google.charts.setOnLoadCallback(currentPieChart);
       //Total Stats for today
       // function currentPieChart() {
       //   //Set the Data holder and top line
