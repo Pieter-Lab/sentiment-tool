@@ -101,7 +101,7 @@ class graphsearchform extends FormBase {
       '#weight' => '1',
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-      if(!empty($_SESSION['tonner']['sel_sentiment_tid']) && $_SESSION['tonner']['sel_sentiment_tid']==='All'){
+      if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
         $form['sentiment']['#default_value'] = $_SESSION['tonner']['sel_sentiment_tid'];
       }
     }
