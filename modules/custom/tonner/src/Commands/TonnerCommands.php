@@ -70,8 +70,11 @@ class TonnerCommands extends DrushCommands {
         $data = file_get_contents($this->NLurl.'&text='.urlencode($headline->getTitle()), false, $context);
         //Convert to JSON
         $json = json_decode($data);
-        $this->printer($json);
-        exit();
+        //Test
+        if($json && !empty($json) && isset($json->keywords) && !empty($json->keywords)){
+          $this->printer($json->keywords);
+          exit();
+        }
       }
     //Talk
     echo $this->prefix.' Nautral Language Noun Extraction has ended'.$this->suffix;
