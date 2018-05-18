@@ -134,8 +134,27 @@ class statistics extends BlockBase {
           foreach($terms as $country) {
             $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
           }
+          //Get All the Terms in the Tones Vocab
+          $query = \Drupal::entityQuery('taxonomy_term');
+          $query->condition('vid', "industry");
+          $query->condition('tid', $_SESSION['tonner']['sel_industry_tid'],"=");
+          $tids = $query->execute();
+          $industryTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+          foreach($industryTerms as $industry) {
+            //load term
+            $industryTerm = \Drupal\taxonomy\Entity\Term::load($industry->Id());
+          }
+          $toneTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($_SESSION['tonner']['sel_industry_tid']);
+          $toneStr = "";
+          foreach($toneTerms as $tone) {
+            //load term
+            $toneTerm = \Drupal\taxonomy\Entity\Term::load($tone->Id());
+            $toneStr.= $toneTerm->getName().' ';
+          }
           $this->printer($countryTerm->getName());
-          
+          $this->printer($industryTerm->getName());
+          $this->printer($toneStr);
+
           exit("Peter Testing");
         }
         return $build;
