@@ -149,8 +149,8 @@
        * Styling on Forms
        */
       function selectWidths(){
-        $("div.form-item-countries").attr('style','display: inline-block;width:45% !important;')
-        $("div.form-item-industries").attr('style','display: inline-block;width:45% !important;')
+        $("div.form-item-countries").attr('style','display: inline-block;width:50% !important;')
+        $("div.form-item-industries").attr('style','display: inline-block;width:50% !important;')
       }
       //Run
       selectWidths();
