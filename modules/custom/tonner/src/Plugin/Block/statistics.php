@@ -79,6 +79,9 @@ class statistics extends BlockBase {
                 }
                 //Add
                 $histCollect[date('Y-m-d',$node->field_publishedat->value)][$tone['name']] = $histCollect[date('Y-m-d',$node->field_publishedat->value)][$tone['name']] + 1;
+                //Get tags
+                $this->printer($node->field_topics->getValue());
+                exit("Peter Testing!!!");
             }
             //set the count
             $tones[$key]['total_headline_count'] = count($nodes);
