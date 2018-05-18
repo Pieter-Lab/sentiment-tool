@@ -48,6 +48,14 @@ class TonnerCommands extends DrushCommands {
   public function nautralLanguageCheck(){
     //Talk
     echo $this->prefix.' Nautral Language Noun Extraction has started'.$this->suffix;
+      //Get All the Headlines
+      $query = \Drupal::entityQuery('node')->condition('type', 'news_headline');
+      $nids = $query->execute();
+      $nodes = \Drupal\Node\Entity\Node::loadMultiple($nids);
+      //Loop em
+      foreach($nodes as $headline){
+        echo $headline->getName().PHP_EOL;
+      }
     //Talk
     echo $this->prefix.' Nautral Language Noun Extraction has ended'.$this->suffix;
   }
