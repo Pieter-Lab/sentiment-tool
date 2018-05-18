@@ -152,21 +152,24 @@ class statistics extends BlockBase {
               $headline .= $industryTerm->getName().' : ';
             }
           }
-//          $toneTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($_SESSION['tonner']['sel_industry_tid']);
-//          $toneStr = "";
-//          foreach($toneTerms as $tone) {
-//            //load term
-//            $toneTerm = \Drupal\taxonomy\Entity\Term::load($tone->Id());
-//            $toneStr.= $toneTerm->getName().' ';
-//          }
-
-//          $this->printer($industryTerm->getName());
+          if(isset($_SESSION['tonner']['sel_sentiment_tid']) && !empty($_SESSION['tonner']['sel_sentiment_tid'])){
+            $toneTerms = \Drupal\taxonomy\Entity\Term::loadMultiple($_SESSION['tonner']['sel_sentiment_tid']);
+            if($toneTerms && !empty($toneTerms)){
+              foreach($toneTerms as $tone) {
+                //load term
+                $toneTerm = \Drupal\taxonomy\Entity\Term::load($tone->Id());
+                $headline .= $toneTerm->getName().' : ';
+              }
+            }
+          }
+          //Check if Headlines was created
           if($headline && !empty($headline)){
             $this->printer(ucfirst($headline));
             $build['#attached']['drupalSettings']['graphheadline'] = ucfirst($headline);
             $build['#graphheadline'] = ucfirst($headline);
           }
         }
+        //return the build
         return $build;
     }
 

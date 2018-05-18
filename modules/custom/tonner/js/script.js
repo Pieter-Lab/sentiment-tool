@@ -80,6 +80,7 @@
           curveType: 'function',
           legend: { position: 'right' }
         };
+        console.log(drupalSettings.graphheadline);
         if(typeof drupalSettings.graphheadline !== "undefined"){
           options.title =  drupalSettings.graphheadline+' performance over '+drupalSettings.total_headlines+' headlines over the last 3 days.';
         }
