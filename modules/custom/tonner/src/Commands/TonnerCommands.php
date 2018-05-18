@@ -76,6 +76,7 @@ class TonnerCommands extends DrushCommands {
           $headline->set('field_topics', []);
           $headline->save();
           $ton = [];
+          $txt = '';
           foreach($json->keywords as $tag){
             if(!empty($tag->text) && isset($tag->text)){
               //Tone
@@ -83,12 +84,14 @@ class TonnerCommands extends DrushCommands {
               if(!empty($tone_term_id)){
                 //update term
                 $ton[]['target_id'] = $tone_term_id;
+                $txt.= $tag->text.', ';
               }
             }
           }
           $headline->set('field_topics', $ton);
           $headline->save();
-          exit();
+          //Talk
+          echo $this->prefix.' Article '.$headline->getTitle().' Has Tags "'.$txt.'" '.$this->suffix;
         }
       }
     //Talk
