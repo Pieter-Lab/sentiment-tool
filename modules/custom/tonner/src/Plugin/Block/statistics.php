@@ -164,7 +164,6 @@ class statistics extends BlockBase {
           }
           //Check if Headlines was created
           if($headline && !empty($headline)){
-            $this->printer(ucfirst($headline));
             $build['#attached']['drupalSettings']['graphheadline'] = ucfirst($headline);
             $build['#graphheadline'] = ucfirst($headline);
           }

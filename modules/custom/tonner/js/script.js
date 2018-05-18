@@ -76,13 +76,13 @@
         var data = google.visualization.arrayToDataTable(chartData);
         //set titles
         var options = {
-          title: 'Tone Performance over '+drupalSettings.total_headlines+' headlines over the last 5 days.',
+          title: 'Tone Performance over '+drupalSettings.total_headlines+' headliness.',
           curveType: 'function',
           legend: { position: 'right' }
         };
         console.log(drupalSettings.graphheadline);
         if(typeof drupalSettings.graphheadline !== "undefined"){
-          options.title =  drupalSettings.graphheadline+' performance over '+drupalSettings.total_headlines+' headlines over the last 3 days.';
+          options.title =  drupalSettings.graphheadline+' performance over '+drupalSettings.total_headlines+' headlines.';
         }
         //set chart
         var curve_chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
