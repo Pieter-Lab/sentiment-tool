@@ -145,13 +145,16 @@
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
-
+      /**
+       * Styling on Forms
+       */
       function selectWidths(){
-        $("div.form-item-countries").attr('style','width:40% !important;')
-        $("div.form-item-industries").attr('style','width:40% !important;')
+        $("div.form-item-countries").attr('style','display: inline-block;width:44% !important;')
+        $("div.form-item-industries").attr('style','display: inline-block;width:44% !important;')
       }
+      //Run
       selectWidths();
-
+      //Listen to resize function
       $(window).resize(function(){
         console.log("Window Resize start");
         currentPieChart();
