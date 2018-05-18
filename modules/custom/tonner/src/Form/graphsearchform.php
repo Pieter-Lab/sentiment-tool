@@ -105,6 +105,15 @@ class graphsearchform extends FormBase {
         $form['sentiment']['#default_value'] = $_SESSION['tonner']['sel_sentiment_tid'];
       }
     }
+    //Tags/Topics---------------------------------------------------------------
+    $form['topic'] = [
+      '#type' => 'entity_autocomplete',
+      '#target_type' => 'taxonomy_term',
+      '#title' => 'Topic',
+      '#selection_settings' => [
+        'target_bundles' => ['tags'],
+      ],
+    ];
     //--------------------------------------------------------------------------
     $form['submit'] = [
       '#type' => 'submit',

@@ -52,7 +52,9 @@ class TonnerCommands extends DrushCommands {
     //Talk
     echo $this->prefix.' Nautral Language Noun Extraction has started'.$this->suffix;
       //Get All the Headlines
-      $query = \Drupal::entityQuery('node')->condition('type', 'news_headline')->range(0,1000);
+      $query = \Drupal::entityQuery('node')->condition('type', 'news_headline');
+      $query->notExists('field_topics');
+      $query->range(1000,2000);
       $nids = $query->execute();
       $nodes = \Drupal\Node\Entity\Node::loadMultiple($nids);
       echo $this->prefix.'---TOTAL ARTICLES '.count($nodes).' ---'.$this->suffix;
