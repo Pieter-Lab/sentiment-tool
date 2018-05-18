@@ -53,8 +53,8 @@ class TonnerCommands extends DrushCommands {
       $nids = $query->execute();
       $nodes = \Drupal\Node\Entity\Node::loadMultiple($nids);
       //Loop em
-      foreach($nodes as $headline){
-        echo $headline->getName().PHP_EOL;
+      foreach($nodes as $head){
+        $headline = \Drupal\taxonomy\Entity\Term::load($head->Id());
       }
     //Talk
     echo $this->prefix.' Nautral Language Noun Extraction has ended'.$this->suffix;
