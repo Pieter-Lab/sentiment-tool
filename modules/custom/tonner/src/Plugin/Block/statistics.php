@@ -161,13 +161,11 @@ class statistics extends BlockBase {
 //          }
 
 //          $this->printer($industryTerm->getName());
-          $this->printer($headline);
           if($headline && !empty($headline)){
+            $this->printer(ucfirst($headline));
             $build['#attached']['drupalSettings']['graphheadline'] = ucfirst($headline);
             $build['#attached']['#graphheadline'] = ucfirst($headline);
           }
-
-          exit("Peter Testing");
         }
         return $build;
     }
