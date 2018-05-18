@@ -146,6 +146,12 @@
         chart.draw(data, options);
       }
 
+      function selectWidths(){
+        $("div.form-item-countries").attr('style','width:40% !important;')
+        $("div.form-item-industries").attr('style','width:40% !important;')
+      }
+      selectWidths();
+
       $(window).resize(function(){
         console.log("Window Resize start");
         currentPieChart();
@@ -157,6 +163,7 @@
         google.charts.setOnLoadCallback(historicalChart);
         google.charts.setOnLoadCallback(totalPieChart);
         google.charts.setOnLoadCallback(drawVisualization);
+        selectWidths();
         console.log("Window Resize end");
       });
 
