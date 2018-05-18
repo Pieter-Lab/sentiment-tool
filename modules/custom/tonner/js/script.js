@@ -80,8 +80,8 @@
           curveType: 'function',
           legend: { position: 'right' }
         };
-        if(typeof drupalSettings.searchSentiment !== "undefined"){
-          options.title =  drupalSettings.searchSentiment+' performance over '+drupalSettings.total_headlines+' headlines over the last 3 days.';
+        if(typeof drupalSettings.graphheadline !== "undefined"){
+          options.title =  drupalSettings.graphheadline+' performance over '+drupalSettings.total_headlines+' headlines over the last 3 days.';
         }
         //set chart
         var curve_chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
