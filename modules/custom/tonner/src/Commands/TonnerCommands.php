@@ -72,7 +72,22 @@ class TonnerCommands extends DrushCommands {
         $json = json_decode($data);
         //Test
         if($json && !empty($json) && isset($json->keywords) && !empty($json->keywords)){
-          $this->printer($json->keywords);
+          //loop the tones
+          $headline->set('field_topics', []);
+          $headline->save();
+          $ton = [];
+          foreach($json->keywords as $tag){
+            if(!empty($tag->text) && isset($tag->text)){
+              //Tone
+              $tone_term_id = $this->get_vocabulary_term($tag->text,'tags');
+              if(!empty($tone_term_id)){
+                //update term
+                $ton[]['target_id'] = $tone_term_id;
+              }
+            }
+          }
+          $headline->set('field_topics', $ton);
+          $headline->save();
           exit();
         }
       }
