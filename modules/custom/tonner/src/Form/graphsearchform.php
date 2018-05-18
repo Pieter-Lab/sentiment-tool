@@ -71,7 +71,7 @@ class graphsearchform extends FormBase {
       '#title' => $this->t('Industries'),
       '#description' => $this->t('Select an Industry'),
       '#options' => $options,
-      '#weight' => '1',
+      '#weight' => '2',
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
       if(!empty($_SESSION['tonner']['sel_industry_tid'])){
@@ -98,7 +98,7 @@ class graphsearchform extends FormBase {
       '#title' => $this->t('Sentiment'),
       '#description' => $this->t('Select a Sentiment'),
       '#options' => $options,
-      '#weight' => '1',
+      '#weight' => '3',
     ];
     if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
       if(!empty($_SESSION['tonner']['sel_sentiment_tid'])){
@@ -113,6 +113,7 @@ class graphsearchform extends FormBase {
       '#selection_settings' => [
         'target_bundles' => ['tags'],
       ],
+      '#weight' => '3',
     ];
     //--------------------------------------------------------------------------
     $form['submit'] = [
@@ -141,6 +142,7 @@ class graphsearchform extends FormBase {
     $_SESSION['tonner']['sel_country_tid'] = $values['countries'];
     $_SESSION['tonner']['sel_industry_tid'] = $values['industries'];
     $_SESSION['tonner']['sel_sentiment_tid'] = $values['sentiment'];
+    $_SESSION['tonner']['sel_tag_tid'] = $values['topic'];
   }
   /**
    * Prints out variables
