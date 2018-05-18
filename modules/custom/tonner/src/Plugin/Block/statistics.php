@@ -164,7 +164,7 @@ class statistics extends BlockBase {
           if($headline && !empty($headline)){
             $this->printer(ucfirst($headline));
             $build['#attached']['drupalSettings']['graphheadline'] = ucfirst($headline);
-            $build['#attached']['#graphheadline'] = ucfirst($headline);
+            $build['#graphheadline'] = ucfirst($headline);
           }
         }
         return $build;
