@@ -124,6 +124,18 @@ class statistics extends BlockBase {
         //Check for Headline
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
           $this->printer($_SESSION['tonner']);
+
+          //Get All the Terms in the Countries Vocab
+          $query = \Drupal::entityQuery('taxonomy_term');
+          $query->condition('vid', "country");
+          $query->condition('tid', $_SESSION['tonner']['sel_country_tid'],"=");
+          $tids = $query->execute();
+          $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+          foreach($terms as $country) {
+            $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
+          }
+          $this->printer($countryTerm->getName());
+          
           exit("Peter Testing");
         }
         return $build;
