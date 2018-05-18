@@ -121,6 +121,11 @@ class statistics extends BlockBase {
         if(isset($this->searchSentiment) && !empty($this->searchSentiment)){
           $build['#attached']['drupalSettings']['searchSentiment'] = ucfirst($this->searchSentiment);
         }
+        //Check for Headline
+        if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
+          $this->printer($_SESSION['tonner']);
+          exit("Peter Testing");
+        }
         return $build;
     }
 

@@ -31,7 +31,7 @@ function tonner_theme() {
         'tonner' => [
             'template' => 'tonner',
             'render element' => 'children',
-            'variables'=>['total_headlines'=> null,'tonescollect'=>null,'searchform'=>null]
+            'variables'=>['total_headlines'=> null,'tonescollect'=>null,'searchform'=>null,'graphheadline'=>null]
         ],
     ];
 }
