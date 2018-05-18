@@ -123,16 +123,19 @@ class statistics extends BlockBase {
         }
         //Check for Headline
         if(isset($_SESSION['tonner']) && !empty($_SESSION['tonner'])){
-          $this->printer($_SESSION['tonner']);
-
+          //Headline
+          $headline = false;
           //Get All the Terms in the Countries Vocab
           $query = \Drupal::entityQuery('taxonomy_term');
           $query->condition('vid', "country");
           $query->condition('tid', $_SESSION['tonner']['sel_country_tid'],"=");
           $tids = $query->execute();
-          $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-          foreach($terms as $country) {
-            $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
+          if($tids && !empty($tids)){
+            $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+            foreach($terms as $country) {
+              $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
+              $headline .= $countryTerm.': ';
+            }
           }
 //          //Get All the Terms in the Tones Vocab
 //          $query = \Drupal::entityQuery('taxonomy_term');
@@ -153,7 +156,7 @@ class statistics extends BlockBase {
 //          }
           $this->printer($countryTerm->getName());
 //          $this->printer($industryTerm->getName());
-//          $this->printer($toneStr);
+          $this->printer($headline);
 
           exit("Peter Testing");
         }
