@@ -160,15 +160,15 @@
       //Listen to resize function
       $(window).resize(function(){
         console.log("Window Resize start");
-        currentPieChart();
+        // currentPieChart();
         historicalChart();
         totalPieChart();
-        drawVisualization();
+        // drawVisualization();
         //Current daily tones
-        google.charts.setOnLoadCallback(currentPieChart);
+        // google.charts.setOnLoadCallback(currentPieChart);
         google.charts.setOnLoadCallback(historicalChart);
         google.charts.setOnLoadCallback(totalPieChart);
-        google.charts.setOnLoadCallback(drawVisualization);
+        // google.charts.setOnLoadCallback(drawVisualization);
         selectWidths();
         console.log("Window Resize end");
       });
