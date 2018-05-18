@@ -86,24 +86,6 @@
         }
         //set chart
         var curve_chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-        curve_chart.setAction({
-          id: 'sample',
-          text: 'See responsible Head Lines',
-          action: function() {
-            selection = curve_chart.getSelection();
-            console.log(selection); 
-            // switch (selection[0].row) {
-            //   case 0: alert('Ender\'s Game-'+ selection[0].row); break;
-            //   case 1: alert('Feynman Lectures on Physics-'+ selection[0].row); break;
-            //   case 2: alert('Numerical Recipes in JavaScript-'+ selection[0].row); break;
-            //   case 3: alert('Truman-'+ selection[0].row); break;
-            //   case 4: alert('Freakonomics-'+ selection[0].row); break;
-            //   case 5: alert('The Mezzanine-'+ selection[0].row); break;
-            //   case 6: alert('The Color of Magic-'+ selection[0].row); break;
-            //   case 7: alert('The Law of Superheroes-'+ selection[0].row); break;
-            // }
-          }
-        });
         //Draw
         curve_chart.draw(data, options);
       }
