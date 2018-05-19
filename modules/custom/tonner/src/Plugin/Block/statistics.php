@@ -84,7 +84,11 @@ class statistics extends BlockBase {
                 if(!empty($tags)){
                   foreach($tags as $tag){
                     $topic = \Drupal\taxonomy\Entity\Term::load($tag['target_id']);
-                    $tagsTopics[$topic->getName()] = $tagsTopics[$topic->getName()]++;
+                    if(!isset($tagsTopics[$topic->getName()])){
+                      $tagsTopics[$topic->getName()] = 0;
+                    }else{
+                      $tagsTopics[$topic->getName()] = $tagsTopics[$topic->getName()]++;
+                    }
                   }
                 }
             }
