@@ -93,8 +93,7 @@ class statistics extends BlockBase {
                 }
             }
             //Sort Tag Topics by Value
-            asort($tagsTopics);
-            $this->printer($tagsTopics);
+            arsort($tagsTopics);
             exit("Pieter is working on it.");
             //set the count
             $tones[$key]['total_headline_count'] = count($nodes);
@@ -150,8 +149,14 @@ class statistics extends BlockBase {
                 ]
             ],
             '#cache' => array('max-age' => 0),
-            '#topicsCloud'=> substr(implode(', ',$tagsTopics), 0, 750)
+            '#topicsCloud'=> ''
         ];
+        //Build Topic list
+        foreach($tagsTopics as $top => $cnt){
+          $build['#topicsCloud'].= $top.'('.$cnt.'), ';
+        }
+        $build['#topicsCloud'] = substr($build['#topicsCloud'],0,255);
+        //Searched Sentiment
         if(isset($this->searchSentiment) && !empty($this->searchSentiment)){
           $build['#attached']['drupalSettings']['searchSentiment'] = ucfirst($this->searchSentiment);
         }
