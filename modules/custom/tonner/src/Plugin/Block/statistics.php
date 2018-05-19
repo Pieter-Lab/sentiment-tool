@@ -84,10 +84,12 @@ class statistics extends BlockBase {
                 if(!empty($tags)){
                   foreach($tags as $tag){
                     $topic = \Drupal\taxonomy\Entity\Term::load($tag['target_id']);
-                    $tagsTopics[$topic->getName()] = ucfirst($topic->getName());
+                    $tagsTopics[$topic->getName()] = $tagsTopics[$topic->getName()]++;
                   }
                 }
             }
+            //Sort Tag Topics by Value
+            asort($tagsTopics);
             //set the count
             $tones[$key]['total_headline_count'] = count($nodes);
             $headlineTotal = $headlineTotal + count($nodes);
