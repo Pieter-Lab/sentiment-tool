@@ -61,41 +61,43 @@ class TonnerCommands extends DrushCommands {
       //Loop em
       foreach($nodes as $head){
         $headline = \Drupal\Node\Entity\Node::load($head->Id());
-        //Extract Language
-        $context = stream_context_create(array(
-          'http' => array(
-            'header'  => "Authorization: Basic " . base64_encode($this->NLusername.":".$this->NLpassword)
-          )
-        ));
-        //call
-        $data = file_get_contents($this->NLurl.'&text='.urlencode($headline->getTitle()), false, $context);
-        //Convert to JSON
-        $json = json_decode($data);
-        //Test
-        if($json && !empty($json) && isset($json->keywords) && !empty($json->keywords)){
-          //loop the tones
-          $headline->set('field_topics', []);
-          $headline->save();
-          $ton = [];
-          $txt = '';
-          foreach($json->keywords as $tag){
-            if(!empty($tag->text) && isset($tag->text)){
-              //Tone
-              $tone_term_id = $this->get_vocabulary_term($tag->text,'tags');
-              if(!empty($tone_term_id)){
-                //update term
-                $ton[]['target_id'] = $tone_term_id;
-                $txt.= $tag->text.', ';
+        if(strlen($headline->getTitle()) > 150){
+          //Extract Language
+          $context = stream_context_create(array(
+            'http' => array(
+              'header'  => "Authorization: Basic " . base64_encode($this->NLusername.":".$this->NLpassword)
+            )
+          ));
+          //call
+          $data = file_get_contents($this->NLurl.'&text='.urlencode($headline->getTitle()), false, $context);
+          //Convert to JSON
+          $json = json_decode($data);
+          //Test
+          if($json && !empty($json) && isset($json->keywords) && !empty($json->keywords)){
+            //loop the tones
+            $headline->set('field_topics', []);
+            $headline->save();
+            $ton = [];
+            $txt = '';
+            foreach($json->keywords as $tag){
+              if(!empty($tag->text) && isset($tag->text)){
+                //Tone
+                $tone_term_id = $this->get_vocabulary_term($tag->text,'tags');
+                if(!empty($tone_term_id)){
+                  //update term
+                  $ton[]['target_id'] = $tone_term_id;
+                  $txt.= $tag->text.', ';
+                }
               }
             }
+            $headline->set('field_topics', $ton);
+            $headline->save();
+            //Talk
+            echo $this->prefix.'/ Article "'.substr($headline->getTitle(), 0, 10).'" Has Tags "'.$txt.'" /'.$this->suffix;
+          }else{
+            //Talk
+            echo $this->prefix.'/ Article "'.substr($headline->getTitle(), 0, 10).'" NO TAGS! /'.$this->suffix;
           }
-          $headline->set('field_topics', $ton);
-          $headline->save();
-          //Talk
-          echo $this->prefix.'/ Article "'.substr($headline->getTitle(), 0, 10).'" Has Tags "'.$txt.'" /'.$this->suffix;
-        }else{
-          //Talk
-          echo $this->prefix.'/ Article "'.substr($headline->getTitle(), 0, 10).'" NO TAGS! /'.$this->suffix;
         }
       }
     //Talk
