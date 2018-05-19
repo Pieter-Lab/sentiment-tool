@@ -94,7 +94,6 @@ class statistics extends BlockBase {
             }
             //Sort Tag Topics by Value
             arsort($tagsTopics);
-            exit("Pieter is working on it.");
             //set the count
             $tones[$key]['total_headline_count'] = count($nodes);
             $headlineTotal = $headlineTotal + count($nodes);
