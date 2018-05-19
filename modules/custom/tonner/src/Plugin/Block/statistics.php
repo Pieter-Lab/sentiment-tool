@@ -152,7 +152,7 @@ class statistics extends BlockBase {
         ];
         //Build Topic list
         foreach($tagsTopics as $top => $cnt){
-          $build['#topicsCloud'].= $top.'('.$cnt.'), ';
+          $build['#topicsCloud'].= $top.' <strong>('.$cnt.')</strong>, ';
         }
         $build['#topicsCloud'] = substr($build['#topicsCloud'],0,255);
         //Searched Sentiment
