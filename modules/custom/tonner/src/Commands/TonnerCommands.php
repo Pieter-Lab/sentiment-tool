@@ -23,9 +23,9 @@ class TonnerCommands extends DrushCommands {
   private $prefix = "########:";
   private $suffix = " :########".PHP_EOL;
   public $username = 'b06c9c4f-85ac-4f13-ae31-503f07fdb58c';
-  public $NLusername = '3ce0c5f4-fc0b-4e3a-8f49-ad0e4d6cc948';
+  public $NLusername = 'a08f2f77-374b-4642-9808-cb89579144e7';
   public $password = 'TVjSD48qz4MS';
-  public $NLpassword = '5MMIqnqWLML0';
+  public $NLpassword = '0lpcrHz2o2hZ';
   public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
   public $NLurl = 'https://gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&features=sentiment,keywords';
   private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
