@@ -61,7 +61,8 @@ class TonnerCommands extends DrushCommands {
       //Loop em
       foreach($nodes as $head){
         $headline = \Drupal\Node\Entity\Node::load($head->Id());
-        if(strlen($headline->getTitle()) > 150){
+        //Test string len
+        if(strlen($headline->getTitle()) > 50){
           //Extract Language
           $context = stream_context_create(array(
             'http' => array(
