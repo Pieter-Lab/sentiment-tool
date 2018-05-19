@@ -152,9 +152,9 @@ class statistics extends BlockBase {
         ];
         //Build Topic list
         foreach($tagsTopics as $top => $cnt){
-          $build['#topicsCloud'].= $top.' <strong>('.$cnt.')</strong>, ';
+          $build['#topicsCloud'].= $top.' ('.$cnt.'), ';
         }
-        $build['#topicsCloud'] = substr($build['#topicsCloud'],0,255);
+        $build['#topicsCloud'] = substr($build['#topicsCloud'],0,355);
         //Searched Sentiment
         if(isset($this->searchSentiment) && !empty($this->searchSentiment)){
           $build['#attached']['drupalSettings']['searchSentiment'] = ucfirst($this->searchSentiment);
