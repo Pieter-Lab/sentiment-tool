@@ -54,7 +54,7 @@ class TonnerCommands extends DrushCommands {
       //Get All the Headlines
       $query = \Drupal::entityQuery('node')->condition('type', 'news_headline');
       $query->notExists('field_topics');
-      $query->range(0,1000);
+      $query->range(0,10000);
       $nids = $query->execute();
       $nodes = \Drupal\Node\Entity\Node::loadMultiple($nids);
       echo $this->prefix.'---TOTAL ARTICLES '.count($nodes).' ---'.$this->suffix;
