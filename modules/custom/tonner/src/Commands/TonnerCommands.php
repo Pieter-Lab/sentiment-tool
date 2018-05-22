@@ -22,10 +22,10 @@ class TonnerCommands extends DrushCommands {
   //IBM WATSON KEYS
   private $prefix = "########:";
   private $suffix = " :########".PHP_EOL;
-  public $username = '3f79c858-60e9-43b5-bc30-f7d0858f5e0a';
-  public $password = 'qd155N5DxozD';
-  public $NLusername = '8afbaf0d-fba7-4052-bbc1-2d6cd65fc21b';
-  public $NLpassword = 'AUmCNOyzxKds';
+  public $username = 'bc16718e-6db9-4250-a64b-65705a4875cb';
+  public $password = '57nvE4oGGlJK';
+  public $NLusername = '761fe398-9ebf-49ad-bbf3-e7000e9638dd';
+  public $NLpassword = 'vfLTCpYKmxO0';
   public $url = 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21';
   public $NLurl = 'https://gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&features=sentiment,keywords';
   private $indusrties = ['business','entertainment','general','health','science','sports','technology'];
