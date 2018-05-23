@@ -1,0 +1,83 @@
+########: Nautral Language Noun Extraction has started :########
+########:---TOTAL ARTICLES 8636 --- :########
+########:/ Article "Driverless" Has Tags "Driverless trains, new rail operator, high speed services, reliability, Wales, " / :########
+########:/ Article "London pro" Has Tags "worst annual slowdown, property market suffers, monthly dip, national prices, " / :########
+########:/ Article "At least 4" Has Tags "vital benefits, people, way, " / :########
+########:/ Article "Internet '" Has Tags "ICE CREAM, Prince George, followers, poison, Internet, " / :########
+########:/ Article "Kai Rooney" Has Tags "Kai Rooney, family fishing trip, Barbados, catch, " / :########
+########:/ Article "Maya Jama " Has Tags "Addresses Offensive Tweet, Dark-Skinned, Jama, " / :########
+########:/ Article "Louise Min" Has Tags "awkward BBC Breakfast, Louise Minchin, page story, " / :########
+########:/ Article "Who is Jam" Has Tags "Jamie Redknapp, Julia Restoin-Roitfeld, girlfriend, " / :########
+########:/ Article "'One of th" Has Tags "somebody kill, Volunteer father, boys, Bruv, tweeting, school, " / :########
+########:/ Article "Christine " Has Tags "Christine Lampard, sweet way, daughters, Frank, baby, " / :########
+########:/ Article "Rolling St" Has Tags "Rolling Stones London, Manchester attack victims, Liam Gallagher, Live Forever, rendition, " / :########
+########:/ Article "EastEnders" Has Tags "Shakil Kazemi twist, Bex Fowler, EastEnders spoilers, Martin Fowler, tragic news, dad, viewers, " / :########
+########:/ Article "MH370: 'Un" Has Tags "Malaysia Airlines pilot, moment, investigator, ocean, " / :########
+########:/ Article "Unai Emery" Has Tags "boss live updates, Arsene Wenger, Unai Emery, Arsenal, successor, reaction, " / :########
+########:/ Article "Ditch the " Has Tags "Environment Agency chief, water use targets, bath, need, " / :########
+########:/ Article "Boris John" Has Tags "Boris Johnson, plane, EU, Brexit, trade, UK, " / :########
+########:/ Article "Tuticorin " Has Tags "Tuticorin Protest LIVE, Kamal Haasan, Visiting Town, Case, Section, " / :########
+########:/ Article "It turns o" Has Tags "harm, sleeping, lack, weekend, sleep, " / :########
+########:/ Article "Experiment" Has Tags "ISS, fraction, atoms, CAL, Experiment, temperature, " / :########
+########:/ Article "David Gold" Has Tags "boss Manuel Pellegrini, international Declan Rice, David Gold, Ham, West, Ireland, England, player, " / :########
+########:/ Article "World Cup " Has Tags "World Cup Final, TV channel, fixture, date, tickets, " / :########
+########:/ Article "Harry Kane" Has Tags "Tottenham team-mate Kieran, Harry Kane, England captain, World Cup, " / :########
+########:/ Article "Stoke appo" Has Tags "Gary Rowett, new manager, Premier League, Stoke, Potters, relegation, " / :########
+########:/ Article "OnePlus 6 " Has Tags "Notch removal update, slow-motion recording, release date, specs, price, " / :########
+########:/ Article "Time's Up " Has Tags "Sexual Harassment Complaints, Filed Against McDonald, Time, Women, " / :########
+########:/ Article "A 30-year-" Has Tags "30-year-old demanded notice, eviction, judge, parents, house, " / :########
+########:/ Article "Medtronic'" Has Tags "hypertension study, treatment effect, Medtronic, premarket, Symplicity Spyral, shares, " / :########
+########:/ Article "Forget Eve" Has Tags "Fish, Look, Industry, " / :########
+########:/ Article "Are we rai" Has Tags "TV doc, Calpol kids, drugs, generation, Doctor, children, " / :########
+########:/ Article "A rare gre" Has Tags "extinct marsupial lion, rare great ape, New Species list, 130-foot-tall tree, " / :########
+########:/ Article "11 takeawa" Has Tags "Jets trading Christian, Teddy Bridgewater, takeaways, Hackenberg, Raiders, Faith, " / :########
+########:/ Article "Giants' Jo" Has Tags "national anthem issue, John Mara, 15-yard penalty, Giants, NFL, " / :########
+########:/ Article "Former Aus" Has Tags "Post boss Ahmed, Melbourne mansion, " / :########
+########:/ Article "Australian" Has Tags "Safety Bureau investigators, ditching, " / :########
+########:/ Article "Watch: Sho" Has Tags "busy mall, hammer-wielding thief, Michael Hill, disbelief, Shoppers, smash, " / :########
+########:/ Article "Philip Wil" Has Tags "Philip Wilson, conviction, Archbishop, Adelaide, " / :########
+########:/ Article "Maintainin" Has Tags "early adulthood, healthy weight, middle age, diabetes, " / :########
+########:/ Article "GRACE-FO M" Has Tags "Twin Satellites, GRACE-FO Mission, Study Earth, Water Cycle, NASA, Space, " / :########
+########:/ Article "Collingwoo" Has Tags "Friday night AFL, Collingwood Magpies, Western Bulldogs, odds, preview, teams, action, " / :########
+########:/ Article "Sridevi de" Has Tags "Bizarre theories, Sridevi death, crore insurance, Dawood, Rs, involvement, " / :########
+########:/ Article "Confirmed!" Has Tags "Hai Kya, Rajkummar Rao, Kangana Ranaut, Amyra Dastur, " / :########
+########:/ Article "Parmanu: A" Has Tags "John Abraham film, historic event, Parmanu, " / :########
+########:/ Article "Sterlite p" Has Tags "Sterlite protest LIVE, Thoothukudi injures, Fresh firing, policemen, reports, " / :########
+########:/ Article "TN SSLC 10" Has Tags "Tamil Nadu SSLC, SSLC 10th result, exam results, TN, tnresults.nic.in, " / :########
+########:/ Article "Study show" Has Tags "chronic kidney disease, pregnancy-related diabetes, Study shows women, " / :########
+########:/ Article "Robotic Su" Has Tags "Tennis-Ball Size Tumour, Robotic Surgery, 14-YO Boy, Abdomen, " / :########
+########:/ Article "Scientists" Has Tags "Common Childhood Cancer, Scientists, " / :########
+########:/ Article "Union Mini" Has Tags "Minister Rajyavardhan Rathore, Virat Kohli, issues fitness challenge, Saina Nehwal, Union, video, " / :########
+########:/ Article "Apple's pa" Has Tags "gen iPhones, nm chips, partner TSMC, Apple, production, Report, " / :########
+########:/ Article "Global Liq" Has Tags "Liquid Packaging Cartons, Future Scenario Forecast, Market Growth Prospects, Key Vendors, " / :########
+########:/ Article "Global Ton" Has Tags "Dr Pepper Snapple, Jack Rudy Cocktail, Global Tonic Water, Market Growth Opportunities, Sodastream, " / :########
+########:/ Article "Global Wor" Has Tags "Future Scenario Forecast, Market Growth Prospects, Global Workplace Service, Key Vendors, " / :########
+########:/ Article "Automotive" Has Tags "Exterior LED Lighting, Latest Trends, Market Analysis, Growth Opportunities, Regions, " / :########
+########:/ Article "Crohns suf" Has Tags "Crohns, Colitis UK, trek, money, awareness, " / :########
+########:/ Article "Anita Seng" Has Tags "Curiosity rover landing, Anita Sengupta, coldest spot, NASA, " / :########
+########:/ Article "Moroccan W" Has Tags "Moroccan World Cup, territories inclusion, decision making process, complaint, bid, " / :########
+########:/ Article "10 things " Has Tags "DC Rod Marinelli, wrestling match, Cowboys, Victor, " / :########
+########:/ Article "Global Org" Has Tags "Global Organic Polymer, Electronics Market Analysis, Expected CAGR, Forecast, Trends, " / :########
+########:/ Article "Copolyeste" Has Tags "Copolyester Thermoplastic Elastomers, LG Chem, BASF SE, Arkema SA, Bayer AG, Market Reports, " / :########
+########:/ Article "Liam Galla" Has Tags "Manchester attack victims, Rolling Stones UK, Liam Gallagher, Live Forever, " / :########
+########:/ Article "Ms Lauryn " Has Tags "Ms Lauryn Hill, 20th anniversary world, Miseducation, " / :########
+########:/ Article "Dermot Ban" Has Tags "Dermot Bannon, Majella O'Donnell, eye, celebrity, Daniel, " / :########
+########:/ Article "Books of c" Has Tags "schoolgirl Ana Kriegel, arrests, condolences, Books, " / :########
+########:/ Article "Department" Has Tags "Met Eireann, Agriculture issues, new orange, Department, weather, cards, " / :########
+########:/ Article "Scarlets b" Has Tags "Tadhg Beirne call-up, Joe Schmidt, Scarlets, Ireland squad, Australian tour, " / :########
+########:/ Article "'We're goi" Has Tags "Wicklow boss John, Dubs, Evans, scoreboard, " / :########
+########:/ Article "Waterford " Has Tags "Waterford boss Alan, Lawrence Vigouroux returns, new goalkeeper, Reynolds, plans, " / :########
+########:/ Article "Derry boss" Has Tags "Derry boss Damien, Oak Leafers, " / :########
+########:/ Article "A series o" Has Tags "video game titles, new Gears, " / :########
+########:/ Article "Global Cli" Has Tags "Global Climate Chamber, Market Competitive Insights, Weiss Technik, CSZ, ESPEC, Thermotron, " / :########
+########:/ Article "Heat Pump " Has Tags "Pump Water Heaters, Latest Trends, Research Report, Forecast, Market, Growth, " / :########
+########:/ Article "Global Hea" Has Tags "Global Heat Sinks, Market| Research Key, Industry Overview, Supply Chain, Players, Analysis, " / :########
+########:/ Article "Global Epo" Has Tags "Global Epoxy Hardener, Market| Growth Forecast, Regions, " / :########
+########:/ Article "Global Car" Has Tags "Global Carburetor Market, Bing Power, Youli, Growth Opportunities, Fuding Huayi, Walbro, " / :########
+########:/ Article "'I think w" Has Tags "Michael B. Curry, royal wedding, church, Bishop, " / :########
+########:/ Article "St Kilda C" Has Tags "Kilda CEO Matt, " / :########
+########:/ Article "Dane Coles" Has Tags "Dane Coles, troublesome knee, Hurricanes hero, return, surgery, " / :########
+########:/ Article "Manual Blo" Has Tags "Manual Blood Collection, Product Market Analysis, Import Forecast, Consumption, Revenue, Production, Export, " / :########
+########:/ Article "Billions i" Has Tags "fewer clean audits, paints bleak picture, irregular expenditure, Billions, " / :########
+########:/ Article "2018 Hyund" Has Tags "Hyundai Creta Facelift, Vs Jeep Compass, Better SUV, Specs, " / :########
+########: Nautral Language Noun Extraction has ended :########
