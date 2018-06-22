@@ -7,7 +7,7 @@
           <img src="{{ country.flag }}" />
         </div>
         <div style="height: {{ country.sentiment_percentage }}%;background-color: #cc2a00;z-index: 2;position: absolute;width: 100%;bottom: 0px;">
-          {{ country.sentiment }}
+          {{ country.sentiment }}: {{ country.sentiment_percentage }}%
         </div>
       </div>
     {% endfor %}
