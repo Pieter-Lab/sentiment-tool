@@ -30,7 +30,14 @@ class StatOverview extends BlockBase {
       //Load country object
       $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
       //get the sentiment Totals
-      $this->printer($countryTerm->field_sentiment_totals->getValue());
+      $sentiment = $countryTerm->field_sentiment_totals->getValue();
+      if($sentiment && !empty($sentiment)){
+        //loop
+        foreach($sentiment as $fcV){
+          //Load Field Collection
+          $fc = \Drupal\field_collection\Entity\FieldCollectionItem::load($fcV['value']);
+        }
+      }
     }
     $build['stats_overview']['#markup'] = 'Implement StatOverview.';
 
