@@ -3,6 +3,8 @@
     {% for key, country in data.countries.list %}
       <div class="col-md_3">
         {{ country.country }}
+        {{ country.sentiment }}
+        {{ country.sentiment_percentage }}
       </div>
     {% endfor %}
   </div>
