@@ -8,8 +8,8 @@
         <div class="row">
           {{ country.country }}
         </div>
-        <div class="row" style="height: {{ country.sentiment_percentage }}%;">
-          { country.sentiment }}
+        <div class="row" style="height: {{ country.sentiment_percentage }}%;background-color: #cc2a00;">
+          {{ country.sentiment }}
         </div>
       </div>
     {% endfor %}
