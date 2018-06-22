@@ -33,10 +33,13 @@ class StatOverview extends BlockBase {
     $display_build['countries']['top']['country_name'] = null;
     $display_build['countries']['top']['sentiment'] = null;
     $display_build['countries']['top']['total'] = 0;
+    $display_build['countries']['total_articles'] = 0;
     //Loop Countries
     foreach($terms as $country) {
       //Load country object
       $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
+      //Add to total count
+      $display_build['countries']['total_articles'] = $display_build['countries']['total_articles'] + $countryTerm->field_total_number_of_articles->value;
       //get the sentiment Totals
       $sentiment = $countryTerm->field_sentiment_totals->getValue();
       if($sentiment && !empty($sentiment)){
