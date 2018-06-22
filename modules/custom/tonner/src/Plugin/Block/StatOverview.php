@@ -25,6 +25,10 @@ class StatOverview extends BlockBase {
     $query->condition('vid', "country");
     $tids = $query->execute();
     $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    //Hold the Top Sentiment for the Country
+    $sentiment_max_country = null;
+    $sentiment_max_sentiment = null;
+    $sentiment_max_total = 0;
     //Loop Countries
     foreach($terms as $country) {
       //Load country object
@@ -36,11 +40,22 @@ class StatOverview extends BlockBase {
         foreach($sentiment as $fcV){
           //Load Field Collection
           $fc = \Drupal\field_collection\Entity\FieldCollectionItem::load($fcV['value']);
-          $this->printer($fc->field_sentiment->entity->getName());
-          $this->printer($fc->field_total->value);
+          //Get values
+          $sentiment_count = (int) $fc->field_total->value;
+          //Test
+          if($sentiment_max_total < $sentiment_count){
+            //Set
+            $sentiment_max_country = $countryTerm->getName();
+            $sentiment_max_sentiment = $fc->field_sentiment->entity->getName();
+            $sentiment_max_total = $sentiment_count;
+          }
         }
       }
     }
+    $this->printer($sentiment_max_country);
+    $this->printer($sentiment_max_sentiment);
+    $this->printer($sentiment_max_total);
+
     $build['stats_overview']['#markup'] = 'Implement StatOverview.';
 
     return $build;
