@@ -2,11 +2,11 @@
   <div class="col-md-12">
     {% for key, country in data.countries.list %}
       <div class="col-md-3">
-        <div class="row">
+        <div class="row" style="z-index: 1;">
           <img src="{{ country.flag }}" />
         </div>
-        <h4>{{ country.country }}</h4>
-        <div class="row" style="height: {{ country.sentiment_percentage }}%;background-color: #cc2a00;">
+        <h4 style="z-index: 1;">{{ country.country }}</h4>
+        <div class="row" style="height: {{ country.sentiment_percentage }}%;background-color: #cc2a00;z-index: 2;">
           {{ country.sentiment }}
         </div>
       </div>
