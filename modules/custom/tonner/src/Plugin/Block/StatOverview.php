@@ -43,6 +43,8 @@ class StatOverview extends BlockBase {
         //holder
         $sent_max_name = null;
         $sent_max_count = 0;
+        //get precentage
+        $totaler = 0;
         //loop
         foreach($sentiment as $fcV){
           //Load Field Collection
@@ -54,17 +56,20 @@ class StatOverview extends BlockBase {
             $sent_max_count = $sentiment_count;
             $sent_max_name = $fc->field_sentiment->entity->getName();
           }
+          //add
+          $totaler = $totaler + $sentiment_count;
         }
         //Add to List
         $display_build['countries']['list'][$sent_max_count] = [
           'sentiment' => $sent_max_name,
-          'country' => $countryTerm->getName()
+          'country' => $countryTerm->getName(),
+          'sentiment_totals' => $totaler
         ];
       }
     }
     //Key sort
     ksort($display_build['countries']['list']);
-    
+
     $this->printer($display_build);
 
     $build['stats_overview']['#markup'] = 'Implement StatOverview.';
