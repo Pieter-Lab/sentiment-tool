@@ -71,10 +71,11 @@ class StatOverview extends BlockBase {
     }
     //Key sort
     krsort($display_build['countries']['list']);
-
-    $this->printer($display_build);
-
-    $build['stats_overview']['#markup'] = 'Implement StatOverview.';
+    //Setup the render array
+    $build = [
+      '#theme' => 'tonneroverview',
+      '#data' => $display_build
+    ];
 
     return $build;
   }
