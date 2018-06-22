@@ -25,10 +25,14 @@ class StatOverview extends BlockBase {
     $query->condition('vid', "country");
     $tids = $query->execute();
     $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    //Holder
+    $display_build = [];
     //Hold the Top Sentiment for the Country
-    $sentiment_max_country = null;
-    $sentiment_max_sentiment = null;
-    $sentiment_max_total = 0;
+    $display_build['countries'] = [];
+    $display_build['countries']['top'] = [];
+    $display_build['countries']['top']['country_name'] = null;
+    $display_build['countries']['top']['sentiment'] = null;
+    $display_build['countries']['top']['total'] = 0;
     //Loop Countries
     foreach($terms as $country) {
       //Load country object
@@ -43,18 +47,16 @@ class StatOverview extends BlockBase {
           //Get values
           $sentiment_count = (int) $fc->field_total->value;
           //Test
-          if($sentiment_max_total < $sentiment_count){
+          if($display_build['countries']['top']['total'] < $sentiment_count){
             //Set
-            $sentiment_max_country = $countryTerm->getName();
-            $sentiment_max_sentiment = $fc->field_sentiment->entity->getName();
-            $sentiment_max_total = $sentiment_count;
+            $display_build['countries']['top']['country_name'] = $countryTerm->getName();
+            $display_build['countries']['top']['sentiment'] = $fc->field_sentiment->entity->getName();
+            $display_build['countries']['top']['total'] = $sentiment_count;
           }
         }
       }
     }
-    $this->printer($sentiment_max_country);
-    $this->printer($sentiment_max_sentiment);
-    $this->printer($sentiment_max_total);
+    $this->printer($display_build);
 
     $build['stats_overview']['#markup'] = 'Implement StatOverview.';
 
