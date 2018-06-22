@@ -76,7 +76,7 @@ class StatOverview extends BlockBase {
       '#theme' => 'tonneroverview',
       '#data' => $display_build
     ];
-
+    //return render array
     return $build;
   }
 
