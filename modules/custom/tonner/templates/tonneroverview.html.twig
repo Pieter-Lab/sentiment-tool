@@ -2,10 +2,15 @@
   <div class="col-md-12">
     {% for key, country in data.countries.list %}
       <div class="col-md-3" style='background-image: url("{{ country.flag }}"); background-size: cover;'>
-        {{ country.country }}
-        {{ country.sentiment }}
-        {{ country.sentiment_percentage }}
-        {{ country.flag }}
+        <div class="row">
+          <img src="{{ country.flag }}" />
+        </div>
+        <div class="row">
+          {{ country.country }}
+        </div>
+        <div style="height: {{ country.sentiment_percentage }}%;">
+          { country.sentiment }}
+        </div>
       </div>
     {% endfor %}
   </div>
