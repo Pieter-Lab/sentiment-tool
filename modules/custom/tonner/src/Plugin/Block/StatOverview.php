@@ -36,6 +36,8 @@ class StatOverview extends BlockBase {
         foreach($sentiment as $fcV){
           //Load Field Collection
           $fc = \Drupal\field_collection\Entity\FieldCollectionItem::load($fcV['value']);
+          $this->printer($fc->field_sentiment->value);
+          $this->printer($fc->field_total->value);
         }
       }
     }
