@@ -35,6 +35,8 @@ class StatOverview extends BlockBase {
     foreach($terms as $country) {
       //Load country object
       $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
+      //Add to totals
+      $display_build['countries']['total_articles'] = $display_build['countries']['total_articles'] + $countryTerm->field_total_number_of_articles->value;
       //get the sentiment Totals
       $sentiment = $countryTerm->field_sentiment_totals->getValue();
       if($sentiment && !empty($sentiment)){
@@ -60,7 +62,9 @@ class StatOverview extends BlockBase {
         ];
       }
     }
-
+    //Key sort
+    ksort($display_build['countries']['list']);
+    
     $this->printer($display_build);
 
     $build['stats_overview']['#markup'] = 'Implement StatOverview.';
