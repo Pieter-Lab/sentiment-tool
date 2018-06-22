@@ -59,7 +59,7 @@ class StatOverview extends BlockBase {
           //add
           $totaler = $totaler + $sentiment_count;
         }
-        if($sent_max_count < 0){
+        if($sent_max_count > 0){
           //Add to List
           $display_build['countries']['list'][$sent_max_count] = [
             'sentiment' => $sent_max_name,
