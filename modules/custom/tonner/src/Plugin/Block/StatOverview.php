@@ -29,11 +29,12 @@ class StatOverview extends BlockBase {
     $display_build = [];
     //Hold the Top Sentiment for the Country
     $display_build['countries'] = [];
+    $display_build['countries']['total_articles'] = 0;
     $display_build['countries']['top'] = [];
     $display_build['countries']['top']['country_name'] = null;
     $display_build['countries']['top']['sentiment'] = null;
     $display_build['countries']['top']['total'] = 0;
-    $display_build['countries']['total_articles'] = 0;
+    $display_build['countries']['top']['percentage'] = 0;
     //Loop Countries
     foreach($terms as $country) {
       //Load country object
@@ -59,11 +60,23 @@ class StatOverview extends BlockBase {
         }
       }
     }
+    //Get percentage for Top Country
+    $display_build['countries']['top']['percentage'] = $this->percentageOf($display_build['countries']['top']['total'],$display_build['countries']['total_articles']);
+    
     $this->printer($display_build);
 
     $build['stats_overview']['#markup'] = 'Implement StatOverview.';
 
     return $build;
+  }
+
+
+  /**
+   * Calculate percetage between the numbers
+   */
+
+  function percentageOf( $number, $everything, $decimals = 2 ){
+    return round( $number / $everything * 100, $decimals );
   }
 
   /**
