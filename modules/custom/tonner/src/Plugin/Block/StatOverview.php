@@ -68,7 +68,7 @@ class StatOverview extends BlockBase {
       }
     }
     //Key sort
-    ksort($display_build['countries']['list']);
+    krsort($display_build['countries']['list']);
 
     $this->printer($display_build);
 
