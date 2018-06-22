@@ -63,12 +63,12 @@ class StatOverview extends BlockBase {
         $display_build['countries']['list'][$sent_max_count] = [
           'sentiment' => $sent_max_name,
           'country' => $countryTerm->getName(),
-          'sentiment_totals' => $totaler
+          'sentiment_percentage' => $this->percentageOf($sent_max_name,$totaler)
         ];
       }
     }
     //Key sort
-    ksort($display_build['countries']['list']);
+    krsort($display_build['countries']['list']);
 
     $this->printer($display_build);
 
