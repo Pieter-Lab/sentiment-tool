@@ -1,7 +1,8 @@
 <h3>Country Overview</h3>
-<div class="col-md-12">
-{% for key, country in data.countries.list %}
-  <div class="col-md_3">
-    {{ country.country }}
+  <div class="col-md-12">
+    {% for key, country in data.countries.list %}
+      <div class="col-md_3">
+        {{ country.country }}
+      </div>
+    {% endfor %}
   </div>
-</div>
