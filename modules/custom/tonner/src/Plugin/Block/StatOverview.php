@@ -30,20 +30,17 @@ class StatOverview extends BlockBase {
     //Hold the Top Sentiment for the Country
     $display_build['countries'] = [];
     $display_build['countries']['total_articles'] = 0;
-    $display_build['countries']['top'] = [];
-    $display_build['countries']['top']['country_name'] = null;
-    $display_build['countries']['top']['sentiment'] = null;
-    $display_build['countries']['top']['total'] = 0;
-    $display_build['countries']['top']['percentage'] = 0;
+    $display_build['countries']['list'] = [];
     //Loop Countries
     foreach($terms as $country) {
       //Load country object
       $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
-      //Add to total count
-      $display_build['countries']['total_articles'] = $display_build['countries']['total_articles'] + $countryTerm->field_total_number_of_articles->value;
       //get the sentiment Totals
       $sentiment = $countryTerm->field_sentiment_totals->getValue();
       if($sentiment && !empty($sentiment)){
+        //holder
+        $sent_max_name = null;
+        $sent_max_count = 0;
         //loop
         foreach($sentiment as $fcV){
           //Load Field Collection
@@ -51,18 +48,19 @@ class StatOverview extends BlockBase {
           //Get values
           $sentiment_count = (int) $fc->field_total->value;
           //Test
-          if($display_build['countries']['top']['total'] < $sentiment_count){
-            //Set
-            $display_build['countries']['top']['country_name'] = $countryTerm->getName();
-            $display_build['countries']['top']['sentiment'] = $fc->field_sentiment->entity->getName();
-            $display_build['countries']['top']['total'] = $sentiment_count;
+          if($sent_max_count < $sentiment_count){
+            $sent_max_count = $sentiment_count;
+            $sent_max_name = $fc->field_sentiment->entity->getName();
           }
         }
+        //Add to List
+        $display_build['countries']['list'][$sent_max_count] = [
+          'sentiment' => $sent_max_name,
+          'country' => $countryTerm->getName()
+        ];
       }
     }
-    //Get percentage for Top Country
-    $display_build['countries']['top']['percentage'] = $this->percentageOf($display_build['countries']['top']['total'],$display_build['countries']['total_articles']);
-    
+
     $this->printer($display_build);
 
     $build['stats_overview']['#markup'] = 'Implement StatOverview.';
