@@ -1,7 +1,7 @@
 <h3>Country Overview</h3>
   <div class="col-md-12">
     {% for key, country in data.countries.list %}
-      <div class="col-md-3">
+      <div class="col-md-3" style="height: 250px;">
         <h4 style="z-index: 1;">{{ country.country }}</h4>
         <div style="z-index: 1;">
           <img src="{{ country.flag }}" />
