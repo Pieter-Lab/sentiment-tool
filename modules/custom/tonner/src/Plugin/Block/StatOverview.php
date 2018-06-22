@@ -70,6 +70,11 @@ class StatOverview extends BlockBase {
             'country' => $countryTerm->getName(),
             'sentiment_percentage' => $this->percentageOf($sent_max_count,$totaler)
           ];
+          if(isset($countryInfo) && !empty($countryInfo)){
+            if(isset($countryInfo->flag) && !empty($countryInfo->flag)){
+              $display_build['countries']['list'][$sent_max_count]['flag'] = $countryInfo->flag;
+            }
+          }
         }
       }
     }
