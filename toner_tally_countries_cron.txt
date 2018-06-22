@@ -1,98 +1,182 @@
-########: 2018-05-23 03:00:01 pm: Tally Countries Process Started *************************
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Articles: 3017 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Tone "Analytical" Articles: 1343 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Tone "Anger" Articles: 150 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Tone "Confident" Articles: 296 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Tone "Fear" Articles: 142 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Tone "Joy" Articles: 826 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Tone "Sadness" Articles: 610 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Tone "Tentative" Articles: 503 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Industry "business" Articles: 439 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Industry "entertainment" Articles: 446 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Industry "general" Articles: 472 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Industry "health" Articles: 305 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Industry "science" Articles: 51 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Industry "sports" Articles: 443 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Australia: Total Industry "technology" Articles: 336 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Articles: 3316 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Tone "Analytical" Articles: 1466 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Tone "Anger" Articles: 105 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Tone "Confident" Articles: 328 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Tone "Fear" Articles: 141 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Tone "Joy" Articles: 973 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Tone "Sadness" Articles: 567 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Tone "Tentative" Articles: 647 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Industry "business" Articles: 605 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Industry "entertainment" Articles: 517 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Industry "general" Articles: 486 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Industry "health" Articles: 294 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Industry "science" Articles: 55 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Industry "sports" Articles: 488 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: China: Total Industry "technology" Articles: 301 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Tone "Analytical" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Tone "Anger" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Tone "Confident" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Tone "Fear" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Tone "Joy" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Tone "Sadness" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Tone "Tentative" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Industry "business" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Industry "entertainment" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Industry "general" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Industry "health" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Industry "science" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Industry "sports" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: France: Total Industry "technology" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Tone "Analytical" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Tone "Anger" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Tone "Confident" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Tone "Fear" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Tone "Joy" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Tone "Sadness" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Tone "Tentative" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Industry "business" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Industry "entertainment" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Industry "general" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Industry "health" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Industry "science" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Industry "sports" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Germany: Total Industry "technology" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Articles: 3969 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Tone "Analytical" Articles: 1774 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Tone "Anger" Articles: 115 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Tone "Confident" Articles: 462 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Tone "Fear" Articles: 137 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Tone "Joy" Articles: 1218 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Tone "Sadness" Articles: 793 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Tone "Tentative" Articles: 684 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Industry "business" Articles: 527 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Industry "entertainment" Articles: 629 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Industry "general" Articles: 681 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Industry "health" Articles: 392 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Industry "science" Articles: 109 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Industry "sports" Articles: 507 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: India: Total Industry "technology" Articles: 352 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Articles: 2791 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Tone "Analytical" Articles: 1248 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Tone "Anger" Articles: 103 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Tone "Confident" Articles: 337 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Tone "Fear" Articles: 102 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Tone "Joy" Articles: 899 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Tone "Sadness" Articles: 504 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Tone "Tentative" Articles: 434 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Industry "business" Articles: 560 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Industry "entertainment" Articles: 472 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Industry "general" Articles: 546 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Industry "health" Articles: 69 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Industry "science" Articles: 8 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Industry "sports" Articles: 459 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Ireland: Total Industry "technology" Articles: 42 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Italy: Total Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Italy: Total Tone "Analytical" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Italy: Total Tone "Anger" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Italy: Total Tone "Confident" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Italy: Total Tone "Fear" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Italy: Total Tone "Joy" Articles: 0 #######
-########: Date Stamp: 2018-05-23 03:00:01 pm: Italy: Total Tone "Sadness" Articles: 0 #######
+########: 2018-06-22 09:00:01 am: Tally Countries Process Started *************************
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Articles: 9272 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Tone "Analytical" Articles: 4113 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Tone "Anger" Articles: 390 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Tone "Confident" Articles: 943 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Tone "Fear" Articles: 448 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Tone "Joy" Articles: 2701 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Tone "Sadness" Articles: 1818 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Tone "Tentative" Articles: 1543 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Industry "business" Articles: 1579 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Industry "entertainment" Articles: 1606 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Industry "general" Articles: 1574 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Industry "health" Articles: 1117 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Industry "science" Articles: 199 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Industry "sports" Articles: 1483 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Australia: Total Industry "technology" Articles: 1189 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Articles: 9784 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Tone "Analytical" Articles: 4367 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Tone "Anger" Articles: 284 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Tone "Confident" Articles: 982 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Tone "Fear" Articles: 352 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Tone "Joy" Articles: 3020 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Tone "Sadness" Articles: 1738 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Tone "Tentative" Articles: 1846 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Industry "business" Articles: 1838 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Industry "entertainment" Articles: 1677 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Industry "general" Articles: 1664 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Industry "health" Articles: 1117 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Industry "science" Articles: 152 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Industry "sports" Articles: 1707 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: China: Total Industry "technology" Articles: 1059 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Tone "Analytical" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Tone "Anger" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Tone "Confident" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Tone "Fear" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Tone "Joy" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Tone "Sadness" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Tone "Tentative" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Industry "business" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Industry "entertainment" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Industry "general" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Industry "health" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Industry "science" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Industry "sports" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: France: Total Industry "technology" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Tone "Analytical" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Tone "Anger" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Tone "Confident" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Tone "Fear" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Tone "Joy" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Tone "Sadness" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Tone "Tentative" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Industry "business" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Industry "entertainment" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Industry "general" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Industry "health" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Industry "science" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Industry "sports" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Germany: Total Industry "technology" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Articles: 11714 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Tone "Analytical" Articles: 5315 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Tone "Anger" Articles: 346 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Tone "Confident" Articles: 1368 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Tone "Fear" Articles: 410 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Tone "Joy" Articles: 3654 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Tone "Sadness" Articles: 2138 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Tone "Tentative" Articles: 2019 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Industry "business" Articles: 1909 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Industry "entertainment" Articles: 2062 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Industry "general" Articles: 2157 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Industry "health" Articles: 1392 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Industry "science" Articles: 327 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Industry "sports" Articles: 1809 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: India: Total Industry "technology" Articles: 1286 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Articles: 8383 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Tone "Analytical" Articles: 3783 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Tone "Anger" Articles: 271 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Tone "Confident" Articles: 1097 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Tone "Fear" Articles: 276 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Tone "Joy" Articles: 2755 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Tone "Sadness" Articles: 1407 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Tone "Tentative" Articles: 1238 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Industry "business" Articles: 2091 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Industry "entertainment" Articles: 1660 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Industry "general" Articles: 1823 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Industry "health" Articles: 288 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Industry "science" Articles: 13 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Industry "sports" Articles: 1685 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Ireland: Total Industry "technology" Articles: 188 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Tone "Analytical" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Tone "Anger" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Tone "Confident" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Tone "Fear" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Tone "Joy" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Tone "Sadness" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Tone "Tentative" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Industry "business" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Industry "entertainment" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Industry "general" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Industry "health" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Industry "science" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Industry "sports" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Italy: Total Industry "technology" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Tone "Analytical" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Tone "Anger" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Tone "Confident" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Tone "Fear" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Tone "Joy" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Tone "Sadness" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Tone "Tentative" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Industry "business" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Industry "entertainment" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Industry "general" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Industry "health" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Industry "science" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Industry "sports" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: Netherlands: Total Industry "technology" Articles: 0 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Articles: 7382 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Tone "Analytical" Articles: 3208 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Tone "Anger" Articles: 250 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Tone "Confident" Articles: 988 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Tone "Fear" Articles: 269 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Tone "Joy" Articles: 2368 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Tone "Sadness" Articles: 1272 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Tone "Tentative" Articles: 1017 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Industry "business" Articles: 1722 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Industry "entertainment" Articles: 1516 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Industry "general" Articles: 1776 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Industry "health" Articles: 177 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Industry "science" Articles: 20 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Industry "sports" Articles: 1555 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: New Zealand: Total Industry "technology" Articles: 185 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Articles: 8540 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Tone "Analytical" Articles: 3846 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Tone "Anger" Articles: 413 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Tone "Confident" Articles: 974 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Tone "Fear" Articles: 329 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Tone "Joy" Articles: 2509 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Tone "Sadness" Articles: 1483 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Tone "Tentative" Articles: 1263 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Industry "business" Articles: 2080 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Industry "entertainment" Articles: 1448 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Industry "general" Articles: 1906 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Industry "health" Articles: 300 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Industry "science" Articles: 26 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Industry "sports" Articles: 1478 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: South Africa: Total Industry "technology" Articles: 725 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Articles: 13893 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Tone "Analytical" Articles: 6009 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Tone "Anger" Articles: 479 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Tone "Confident" Articles: 1524 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Tone "Fear" Articles: 714 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Tone "Joy" Articles: 4131 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Tone "Sadness" Articles: 2777 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Tone "Tentative" Articles: 2761 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Industry "business" Articles: 2029 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Industry "entertainment" Articles: 2403 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Industry "general" Articles: 1973 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Industry "health" Articles: 1957 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Industry "science" Articles: 1102 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Industry "sports" Articles: 1867 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United Kingdom: Total Industry "technology" Articles: 1831 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Articles: 12492 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Tone "Analytical" Articles: 5753 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Tone "Anger" Articles: 509 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Tone "Confident" Articles: 1238 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Tone "Fear" Articles: 545 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Tone "Joy" Articles: 3336 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Tone "Sadness" Articles: 2412 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Tone "Tentative" Articles: 2782 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Industry "business" Articles: 1884 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Industry "entertainment" Articles: 1892 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Industry "general" Articles: 1947 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Industry "health" Articles: 1521 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Industry "science" Articles: 990 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Industry "sports" Articles: 2248 #######
+########: Date Stamp: 2018-06-22 09:00:01 am: United States: Total Industry "technology" Articles: 1368 #######
+########: 2018-06-22 09:00:01 am: Tally Countries Process Ended *************************
