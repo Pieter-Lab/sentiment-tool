@@ -36,7 +36,7 @@ class StatOverview extends BlockBase {
       //Load country object
       $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
       //Get ISO to get country Information
-      $countryInfo = json_decode(file_get_contents('https://restcountries.eu/rest/v2/name/'.$countryTerm->getName().'?fullText=true'));
+      $countryInfo = current(json_decode(file_get_contents('https://restcountries.eu/rest/v2/name/'.$countryTerm->getName().'?fullText=true')));
       $this->printer($countryInfo);
       exit("Bugger!!!");
       //Add to totals
