@@ -37,6 +37,7 @@ class StatOverview extends BlockBase {
       $countryTerm = \Drupal\taxonomy\Entity\Term::load($country->Id());
       //Get ISO to get country Information
       $this->printer($countryTerm->field_iso_code->value);
+      $this->printer(file_get_contents('https://restcountries.eu/rest/v2/name/'.$countryTerm->getName().'?fullText=true'));
       //Add to totals
       $display_build['countries']['total_articles'] = $display_build['countries']['total_articles'] + $countryTerm->field_total_number_of_articles->value;
       //get the sentiment Totals
