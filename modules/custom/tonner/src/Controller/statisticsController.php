@@ -20,7 +20,8 @@ class statisticsController extends ControllerBase {
         $block_manager = \Drupal::service('plugin.manager.block');
         // You can hard code configuration or you load from settings.
         $config = [];
-        $plugin_block = $block_manager->createInstance('statistics', $config);
+//        $plugin_block = $block_manager->createInstance('statistics', $config);
+        $plugin_block = $block_manager->createInstance('stats_overview', $config);
         // Some blocks might implement access check.
         $access_result = $plugin_block->access(\Drupal::currentUser());
         // Return empty render array if user doesn't have access.
